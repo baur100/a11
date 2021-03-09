@@ -14,7 +14,7 @@ public class House {
     public int price;
 
     public String getAddress(){
-        return "Street adress: " +address+"\nCity: "+ city+ "\nState: "+state+",  zip: " + zip;
+        return "Street address: " +address+"\nCity: "+ city+ "\nState: "+state+",  zip: " + zip;
     }
 
     public String getHouseInfo(){
