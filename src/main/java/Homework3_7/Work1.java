@@ -29,7 +29,9 @@ public class Work1 {
     public static int getMinFromArray(int[] array) {
         int m = array[0];
         for (int v : array) {
-            if (v < m) ;
+            if (v < m) {
+                m=v;
+            }     
         }
         return m;
     }
