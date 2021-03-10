@@ -18,27 +18,26 @@ public class App {
         jane.yearOfBirth = 1989;
 
         System.out.println(anna.lastName);
-
+        System.out.println(david.yearOfBirth);
+        System.out.println(jane.name);
 
         Vehicle myVehicle = new Vehicle();
+        myVehicle.color = "Orange";
         myVehicle.make = "Toyota";
         myVehicle.model = "Prius";
-        myVehicle.color = "Orange";
-        myVehicle.year = "2012";
-
+        myVehicle.year = 2012;
 
         Vehicle myFriendVehicle = new Vehicle();
         myFriendVehicle.make = "Honda";
         myFriendVehicle.model = "Odyssey";
+        myFriendVehicle.color = "Silver ";
+
+
 
         myVehicle.drive(50);
         myVehicle.beep();
 
-        myFriendVehicle.drive(50);
+        myFriendVehicle.drive(40);
         myFriendVehicle.beep();
-
-
-
-
     }
 }
