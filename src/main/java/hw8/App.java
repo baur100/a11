@@ -22,6 +22,20 @@ public class App {
         jackie.lastName = "Taylor";
         jackie.yearOfBirth = 2003;
 
+        Pet Macintosh = new Pet();
+        Macintosh.name = "Macintosh";
+        Macintosh.type = "Dog";
+        Macintosh.breed = "Poodle";
+        Macintosh.yearOfBirth = 2018;
+
+        Macintosh.ride("loves")
+
+        //Pet Bimmy = new Pet();
+        //Bimmy.name = "Bimmy";
+        //Bimmy.type = "Rabbit";
+        //Bimmy.breed = "Dutch";
+        //Bimmy.yearOfBirth = 2012;
+
 
         Vehicle myVehicle = new Vehicle();
         myVehicle.color = "Orange";
