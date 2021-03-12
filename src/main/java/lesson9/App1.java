@@ -1,15 +1,18 @@
 package lesson9;
 
+import lesson9.hw.Berry;
+import lesson9.hw.Book;
 import lesson9.hw.Garden;
 import lesson9.hw.Student;
 
 public class App1 {
     public static void main (String[] args) {
-        /*Person jane = new Person();
+Person jane = new Person();
         jane.setName("Jane");
         jane.setName("Jane Mary");
         System.out.println(jane.getName());
-        jane.setYearOfBirth(1990);*/
+        jane.setYearOfBirth(1990);
+
 
         Student daniel=new Student();
 
@@ -38,23 +41,27 @@ public class App1 {
         System.out.println(tree.getTreeAge());
         System.out.println(tree.getAmountOfTree());
 
-       /* Berry strawberry = new Berry();
+        Berry strawberry = new Berry();
+
 
         strawberry.setName("Strawberry");
         strawberry.setColor("Red");
         strawberry.setTaste("Sweet");
-        strawberry.weightInBasket(25);
+        strawberry.setWeighInBasket(25);
 
         System.out.println(strawberry.getName());
         System.out.println(strawberry.getColor());
         System.out.println(strawberry.getTaste());
-        System.out.println(strawberry.getweightInBasket());
-*/
+        System.out.println(strawberry.getWeighInBasket());
+
+        Book mia = new Book();
+        mia.setName("Mia");
+        mia.setPages(456);
 
 
 
-
-
+        System.out.println(mia.getName());
+        System.out.println(mia.getPages());
 
 
 

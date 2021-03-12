@@ -1,4 +1,3 @@
-/*
 package lesson9.hw;
 
 public class Berry {
@@ -7,35 +6,28 @@ public class Berry {
     private String taste;
     private int weighInBasket;
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String name){
+    this.name=name;
     }
-
-    public String getName() {
+    public String getName(){
         return this.name;
     }
-
-    public void setColor(String color) {
-        this.color = color;
+    public void setColor(String color){
+        this.color=color;
     }
-
-    public String getColor() {
+    public String getColor(){
         return this.color;
     }
-
-    public void setTaste(String taste) {
-        this.taste = taste;
+    public void setTaste(String taste){
+        this.taste=taste;
     }
-
-    public int getTaste() {
+    public String getTaste(){
         return this.taste;
     }
-    public void getWeighInBasket(int weighInBasket) {
+    public void setWeighInBasket(int weighInBasket){
         this.weighInBasket=weighInBasket;
     }
-
-    public int getWeighInBasket() {
+    public int getWeighInBasket(){
         return this.weighInBasket;
     }
 }
-*/
