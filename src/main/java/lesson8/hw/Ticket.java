@@ -1,4 +1,4 @@
-package lesson8;
+package lesson8.hw;
 
 public class Ticket {
     public String name;

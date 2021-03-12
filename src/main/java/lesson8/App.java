@@ -1,5 +1,9 @@
 package lesson8;
 
+import lesson8.hw.Claim;
+import lesson8.hw.Hotel;
+import lesson8.hw.Ticket;
+
 public class App {
     public static void main(String[] args) {
         Person anna = new Person();
@@ -36,43 +40,24 @@ public class App {
         myFriendVehicle.drive(50);
         myFriendVehicle.beep();
 
-        Claim jeweler = new Claim();
-        jeweler.id=134545;
-        jeweler.insuredName="David";
-        jeweler.dateOfLoss=03;
+        House forSell = new House();
+        forSell.zip=33401;
+        forSell.state = "FL";
+        forSell.address = "54 Elm street";
+        forSell.city = "Gotham";
+        forSell.yearOfBuild=1945;
+        forSell.footage=200.23;
+        forSell.bathrooms=3;
+        forSell.bedrooms=3;
+        forSell.sellByOwner=false;
+        forSell.price=500000;
 
-        /*System.out.println(jeweler.id);*/
+        String address = forSell.getAddress();
+        System.out.println(address);
 
-        Claim homeowner = new Claim();
-        homeowner.id=1234567;
-        homeowner.insuredName="Mary";
-        homeowner.dateOfLoss=12022018;
+        System.out.println(forSell.getHouseInfo());
+        System.out.println(forSell.getSellingInfo());
 
-       /* System.out.println(homeowner.dateOfLoss);*/
-
-        Ticket theater = new Ticket();
-        theater.name="Susan";
-        theater.lastName="Schiller";
-        theater.row=24;
-        theater.seatNumber=7;
-
-        /*System.out.println(theater.lastName);
-        System.out.println(theater.name);
-        System.out.println(theater.row);
-        System.out.println(theater.seatNumber);*/
-
-        Hotel building = new Hotel();
-        building.city= "Chicago";
-        building.state= "IL";
-        building.buildingNumber=777;
-        building.street="Palm Tree Drive";
-        building.name= "Bravo";
-
-        System.out.println(building.city);
-        System.out.println(building.state);
-        System.out.println(building.buildingNumber);
-        System.out.println(building.street);
-        System.out.println(building.name);
 
 
 
