@@ -23,6 +23,6 @@ public class App {
 
         maria.work(12);
 
-//        System.out.println("First name: "+anna.name+", Last name: "+ anna.lastname+", Date of Birthday: "+ anna.birthOfBirth);
+        System.out.println("First name: "+anna.name+", Last name: "+ anna.lastname+", Date of Birthday: "+ anna.birthOfBirth);
     }
 }
