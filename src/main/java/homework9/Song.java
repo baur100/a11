@@ -56,4 +56,8 @@ public class Song {
     public void setLength(double length){
         this.length = length;
     }
+
+    public void printInfo(){
+        System.out.println(name + " played by " + artist + " from " + album + " for " + length);
+    }
 }
