@@ -89,6 +89,7 @@ public class App {
         String details1 = uk.getDetails();
         System.out.println(details1);
         String mascot1 = uk.getMascot();
+        System.out.println(mascot1);
 
         String favorite = rock.getFavoriteMusic();
         System.out.println(favorite);
