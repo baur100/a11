@@ -19,7 +19,7 @@ public class App {
         Person jane = new Person();
         jane.name="Jane";
         jane.lastName="Wilson";
-        jane.yearOfBirth=1989;
+        jane.yearOfBirth=-1989;
 
 //        System.out.println(anna.lastName);
 
