@@ -5,7 +5,6 @@ public class Berry {
     private String color;
     private String taste;
     private int weighInBasket;
-
     public void setName(String name){
     this.name=name;
     }
