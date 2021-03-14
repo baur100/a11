@@ -7,13 +7,11 @@ public class AppHomework8 {
 //    create printClass()/ printInfo() method to print out all fields
 //    fields are private
 //    each field has getter and setter
-//2. In the App class create main() and create 2 instanses of each class;
+//2. In the App class create main() and create 2 instances of each class;
 //    one instance created used default constructor - fill up fields using setter
 //    second object created using full constructor
 //    print object info using print-out method
 
-
-    public class AppHomework8 {
 
         public static void main(String[] args) {
             Dog maltese = new Dog();
@@ -34,6 +32,17 @@ public class AppHomework8 {
             Automobile pickUp = new Automobile("Pick up", 8, 2020);
             pickUp.warranty(10);
 
+            SportsTeam mavericks = new SportsTeam();
+            mavericks.setName("Mavericks");
+            mavericks.setPlayers(12);
+            mavericks.setCaptain("Cuban");
+            mavericks.printTeamInfo();
+
+            SportsTeam bulls = new SportsTeam("Bulls", 12, "Jordan");
+            bulls.Wins(82);
+            bulls.printTeamInfo();
+
+
         }
 
 
@@ -41,4 +50,4 @@ public class AppHomework8 {
 
 
 
-}
+
