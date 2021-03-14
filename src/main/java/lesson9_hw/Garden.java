@@ -1,4 +1,4 @@
-package lesson9.hw;
+package lesson9_hw;
 
 public class Garden {
     private String treeName;

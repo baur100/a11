@@ -1,6 +1,6 @@
-package lesson9.hw;
+package lesson9_hw;
 
-import lesson9.Person;
+
 
 public class App {
         public static void main(String[] args) {

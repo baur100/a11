@@ -1,4 +1,4 @@
-package lesson8.hw;
+package lesson8_hw.hw;
 
 public class Hotel {
     public String city;

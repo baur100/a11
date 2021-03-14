@@ -1,4 +1,4 @@
-package lesson8;
+package lesson8_hw;
 
 public class Person {
     public String name;

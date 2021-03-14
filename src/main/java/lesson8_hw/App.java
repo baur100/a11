@@ -1,8 +1,4 @@
-package lesson8;
-
-import lesson8.hw.Claim;
-import lesson8.hw.Hotel;
-import lesson8.hw.Ticket;
+package lesson8_hw;
 
 public class App {
     public static void main(String[] args) {
