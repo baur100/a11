@@ -1,6 +1,6 @@
 package hw10Interface;
 
-public interface Main {
+public interface InterfaceForCar {
     void beep();
     void openWindows();
 }

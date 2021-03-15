@@ -10,7 +10,7 @@ public class App {
         secondCar.beep();
         secondCar.openWindows();
 
-        Main carOne = new WhiteCar();
+        InterfaceForCar carOne = new WhiteCar();
         carOne.beep();
         carOne.openWindows();
 

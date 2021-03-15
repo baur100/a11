@@ -1,6 +1,6 @@
 package hw10Interface;
 
-public class BlackCar implements Main {
+public class BlackCar implements InterfaceForCar {
     private String make;
     private String model;
     private int year;
