@@ -1,6 +1,6 @@
-package hw10SuperClass;
+package hw10Interface;
 
-public class appInterface {
+public class App {
     public static void main(String[] args) {
         BlackCar bC = new BlackCar();
         bC.beep();

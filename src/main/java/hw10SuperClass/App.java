@@ -1,6 +1,6 @@
 package hw10SuperClass;
 
-public class app10 {
+public class App {
     public static void main(String[] args) {
         Apple fruitApple = new Apple("Red apple", "Round shape", "Sweet", true);
         Apple greenApple = new Apple("Green apple", "Round shape", "Sour", true);

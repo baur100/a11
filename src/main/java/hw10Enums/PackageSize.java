@@ -1,4 +1,4 @@
-package hw10SuperClass;
+package hw10Enums;
 
 public enum PackageSize {
     SMALL,

@@ -1,8 +1,6 @@
-package hw10SuperClass;
+package hw10Interface;
 
-import java.util.PrimitiveIterator;
-
-public class BlackCar implements Main{
+public class BlackCar implements Main {
     private String make;
     private String model;
     private int year;

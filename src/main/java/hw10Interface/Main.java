@@ -1,4 +1,4 @@
-package hw10SuperClass;
+package hw10Interface;
 
 public interface Main {
     void beep();
