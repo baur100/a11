@@ -5,25 +5,45 @@ public class Person {
     private String lastName;
     private int yearOfBirth;
 
-    public void setFirstName(String fn){
-        firstName = fn;
+
+    public void getPerson(){
+        System.out.println("My best friend's name is " + firstName + " " + lastName + "." + " He was born in " + yearOfBirth + ".");
     }
+
+    public Person(){
+    }
+
+    public Person(String firstName, String lastName, int yearOfBirth){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.yearOfBirth = yearOfBirth;
+    }
+
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
+    }
+
     public String getFirstName(){
-        return firstName;
+        return this.firstName;
     }
-    public void setLastName(String ln){
-        lastName = ln;
+
+    public void setLastName(String lastName){
+        this.lastName = lastName;
     }
+
     public String getLastName(){
-        return lastName;
+        return this.lastName;
     }
+
     public void setYearOfBirth(int year){
         if(year > 2021 || year < 1915){
             throw new IllegalArgumentException("Please, enter a valid year of birth.");
         }
         yearOfBirth = year;
     }
+
     public int getYearOfBirth(){
-        return yearOfBirth;
+        return this.yearOfBirth;
     }
+
 }
