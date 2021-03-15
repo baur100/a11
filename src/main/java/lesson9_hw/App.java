@@ -1,12 +1,11 @@
 package lesson9_hw;
 
 
-
 public class App {
-        public static void main(String[] args) {
 
-            Student daniel = new Student("Name", "Last Name", 10, 5);
+    public static void main(String[] args) {
 
+            Student daniel = new Student("Natalja", "Lukasevich", 10, 5);
 
             daniel.setName("Daniel");
             System.out.println(daniel.getName());
@@ -16,23 +15,25 @@ public class App {
 
             daniel.setAge(11);
             System.out.println(daniel.getAge());
-            daniel.printInfo();
+
 
 
             daniel.setGrade(5);
             System.out.println(daniel.getGrade());
 
-            Garden tree = new Garden();
+            Garden tree = new Garden("Apple","tree fruit",25,100);
 
-            tree.setTreeName("Apple");
+            /*tree.setTreeName("Apple");
             tree.setFruitKind("tree fruit");
             tree.setTreeAge(26);
-            tree.setAmountOfTree(100);
+            tree.setAmountOfTree(100);*/
+
 
             System.out.println(tree.getTreeName());
             System.out.println(tree.getFruitKind());
             System.out.println(tree.getTreeAge());
             System.out.println(tree.getAmountOfTree());
+
 
             Berry strawberry = new Berry();
 
@@ -54,6 +55,7 @@ public class App {
 
             System.out.println(mia.getName());
             System.out.println(mia.getPages());
+            System.out.println(daniel.toString());
 
 
         }}

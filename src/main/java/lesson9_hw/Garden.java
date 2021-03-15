@@ -4,12 +4,19 @@ public class Garden {
     private String treeName;
     private String fruitKind;
     private int treeAge;
-    private int amountOfTree ;
+    private int amountOfTree;
+
+    public Garden(String treeName, String fruitKind, int treeAge, int amountOfTree) {
+        this.treeName = treeName;
+        this.fruitKind = fruitKind;
+        this.treeAge = treeAge;
+        this.amountOfTree = amountOfTree;
+    }
 
     public String getTreeName(){
         return treeName;
     }
-    public void setTreeName(String t){
+    public void setTreeName (String t){
         treeName=t;
     }
     public String getFruitKind(){
@@ -33,4 +40,14 @@ public class Garden {
         amountOfTree=a;
     }
 
+
+    public void printInfo() {
+        System.out.println("Apple:"+
+        "\ntreeName: " + treeName +
+                "\nfruitKind:" + fruitKind +
+                "\ntreeAge: " + treeAge +
+                "\namountOfTree:" + amountOfTree);
+
+
+    }
 }

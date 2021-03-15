@@ -44,14 +44,17 @@ public class Student {
     public void setGrade(int grade) {
         this.grade = grade;
     }
-    public void printInfo(){
-        System.out.println("Student: "+
-                "\nname: "+ name +
-                "\nlastName: "+ lastName +
-                "\nage="+ age +
-                "\ngrade="+ grade);
-    }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", grade=" + grade +
+                '}';
+
+    }
 }
 
 
