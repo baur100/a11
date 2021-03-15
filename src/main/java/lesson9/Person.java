@@ -1,7 +1,7 @@
 package lesson9;
 
 
-public class Person {
+public class  Person {
     private String name;
     private String lastName;
     private int yearOfBirth;
