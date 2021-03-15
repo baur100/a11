@@ -5,27 +5,41 @@ public class Desserts {
     private String shape;
     private String color;
 
-    public String getName() {
-        return name;
+    public void getDesserts(){
+        System.out.println("My favorite dessert is " + name + " in a " + shape + " shape and in the color " + color + ".");
     }
 
-    public void setName(String name) {
+    public Desserts(){
+    }
+
+    public Desserts(String name, String shape, String color){
+        this.name = name;
+        this.shape = shape;
+        this.color = color;
+    }
+
+    public void setName(String name){
         this.name = name;
     }
 
-    public String getShape() {
-        return shape;
+    public String getName(){
+        return this.name;
     }
 
-    public void setShape(String shape) {
+    public void setShape(String shape){
         this.shape = shape;
     }
 
-    public String getColor() {
-        return color;
+    public String getShape(){
+        return this.shape;
     }
 
-    public void setColor(String color) {
+    public void setColor(String color){
         this.color = color;
     }
+
+    public String getColor(){
+        return this.color;
+    }
+
 }
