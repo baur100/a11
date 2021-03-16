@@ -1,6 +1,5 @@
 package lesson11;
 
-
 public class AppHomework11 {
     public static void main(String[] args) {
 

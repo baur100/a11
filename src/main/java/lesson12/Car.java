@@ -12,7 +12,6 @@ public class Car implements Vehicle{
         this.seats = seats;
         this.windows = windows;
     }
-
     @Override
     public void change_gear(int newGear) {
         this.gear = newGear;

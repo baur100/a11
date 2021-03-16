@@ -30,6 +30,5 @@ public class Customer {
         return "Customer's " +
                 "name is " + name  +
                 " and their account is: " + account;
-
     }
 }
