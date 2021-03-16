@@ -15,7 +15,8 @@ public class Song {
         this.length = length;
     }
 
-    public Song(){}
+    public Song() {
+    }
 
     public String getName(){
         return this.name;
@@ -58,6 +59,6 @@ public class Song {
     }
 
     public void printInfo(){
-        System.out.println(name + " played by " + artist + " from " + album + " for " + length);
+        System.out.println(name + " played by " + artist + " from " + album + " with song length " + length);
     }
 }

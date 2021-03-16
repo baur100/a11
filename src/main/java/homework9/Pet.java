@@ -38,6 +38,6 @@ public class Pet {
     }
 
     public void printInfo(){
-        System.out.println(name + " is a(n)" + breed + " weight for " + weight);
+        System.out.println(name + " is a(n) " + breed + " weight for " + weight);
     }
 }
