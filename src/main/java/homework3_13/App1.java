@@ -16,5 +16,22 @@ public class App1 {
         Refrigerator frigidaire1 = new Refrigerator("Frigidaire", "FFHT1425VV", "White", 13.9, 2, 599.99);
         System.out.println(samsung);
         System.out.println(frigidaire1);
+
+
+        HomeImprovement drill = new HomeImprovement("Drill", TypeDrill.Driver, CordStyle.CORDLESS);
+        System.out.println(drill);
+
+        Mattress mymattress = new Mattress("Linespa", "Plash", mattressSize.QUEEN);
+        System.out.println(mymattress);
+
+
+        AmericanShoesSize mySlippers = new Slippers("Moccasin", "Hanes", "Brown", 11,24.99);
+        AmericanShoesSize sonSlippers= new Slippers("Slide","LongBay","Blue",9.5,19.99);
+
+        AmericanShoesSize sneackersRun = new Sneakers("Running","ADIDAS","White",11,54.99);
+        AmericanShoesSize sneackersWalk = new Sneakers("Walking","New Balance","Black",10.5,65.99);
+        mySlippers.useAmericanSize();
+        sneackersRun.useAmericanSize();
+        System.out.println(mySlippers);
     }
 }
