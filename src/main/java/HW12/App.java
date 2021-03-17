@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
-        ArrayList<String> stringArr = new ArrayList<String >();
+        ArrayList<String> stringArr = new ArrayList<>();
         stringArr.add("first");
         stringArr.add("second");
         stringArr.add("third");
@@ -28,7 +28,7 @@ public class App {
         int stringArrSze = stringArr.size();
         System.out.println(stringArrSze);
 
-        ArrayList<Integer> integerArr = new ArrayList<Integer>();
+        ArrayList<Integer> integerArr = new ArrayList<>();
         integerArr.add(1);
         integerArr.add(2);
         integerArr.add(3);
@@ -52,11 +52,11 @@ public class App {
         int integerArrSze = stringArr.size();
         System.out.println("Size of integerArrSze = " + integerArrSze);
 
-        Person anton = new Person("Anton", "D", 2001, 01);
-        ArrayList<Person> arrayOfPersons = new ArrayList<Person>();
-        Person anna = new Person("Anna", "Iv", 2001, 01);
-        Person anna1 = new Person("Anna1", "Iv2", 2002, 02);
-        Person anna2 = new Person("Anna2", "Iv2", 2002, 03);
+        Person anton = new Person("Anton", "D", 2001, 1);
+        ArrayList<Person> arrayOfPersons = new ArrayList<>();
+        Person anna = new Person("Anna", "Iv", 2001, 1);
+        Person anna1 = new Person("Anna1", "Iv2", 2002, 2);
+        Person anna2 = new Person("Anna2", "Iv2", 2002, 3);
         arrayOfPersons.add(anton);
         arrayOfPersons.add(anna);
         arrayOfPersons.add(anna1);
