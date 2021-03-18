@@ -1,4 +1,4 @@
-package Lesson101112HomeworkCorrected031621.homework12Interfaces031621;
+package Lesson101112HomeworkCorrected031621.homework12InterfacesCorrected031621;
 
 /*public interface vehicleInterface031621
 /* {

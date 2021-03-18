@@ -1,6 +1,7 @@
 package Lesson13Homework031621;
  import java.lang.reflect.Array;
  import java.util.ArrayList;
+ import java.util.List;
 
 /*Create 3 ArrayList - String, Integer and some Custom class
 Add 4+ elements to each List
@@ -9,7 +10,8 @@ Add 4+ elements to each List
 public class stringArrayList031621 {
     public static void main(String[] args) {
         //creating Array List:
-        ArrayList<String> pieList = new ArrayList<String>();
+        //ArrayList<String> pieList = new ArrayList<String>();
+       List<String> pieList = new ArrayList<String>();
         //assigning elements to the array list:
         pieList.add("ApplePie");
         pieList.add("PumpkinPie");

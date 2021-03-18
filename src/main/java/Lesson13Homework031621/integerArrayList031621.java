@@ -1,14 +1,15 @@
 package Lesson13Homework031621;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 /*Create 3 ArrayList - String, Integer and some Custom class
 Add 4+ elements to each List
         excersize methods add/set/remove/get/foreach and etc */
 
 public class integerArrayList031621<testScoreList> {
     public static void main(String[] args) {
-
-    ArrayList<Integer> testScoreList = new ArrayList<Integer>();
+        List<Integer> testScoreList = new ArrayList<Integer>();
+    //ArrayList<Integer> testScoreList = new ArrayList<Integer>();
     //assigning elements to the array list:
         testScoreList.add(57);
         testScoreList.add(62);
