@@ -21,9 +21,9 @@ public class AppCustom {
         for(Printer v:printers){
             System.out.println(v);
         }
-        for(int i=0;i<printers.size();i++){
-            System.out.println(printers.get(i));
-        }
+//        for(int i=0;i<printers.size();i++){
+//            System.out.println(printers.get(i));
+//        }
 
     }
 }
