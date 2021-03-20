@@ -1,6 +1,6 @@
 package lesson10;
 
-public final class Teacher extends Person{
+public final class   Teacher extends Person{
     private String subject;
 
     public Teacher(String name, String lastName, int year, String subject) {

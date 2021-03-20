@@ -4,4 +4,5 @@ public enum SchoolAge {
     ELEMENTARY,
     MIDDLE,
     HIGH
+
 }

@@ -10,8 +10,5 @@ public class App {
         Student peter = new Student("Peter", "Pan", 1989, "Math", subj);
         System.out.println(peter);
         System.out.println(peter.getFirstName());
-
-
-
     }
 }
