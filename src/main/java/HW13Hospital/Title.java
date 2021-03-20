@@ -1,0 +1,9 @@
+package HW13Hospital;
+
+public enum Title {
+    DENTALSURGERY,
+    MEDICALDENTISTRY,
+    OSTEOPATHY,
+    PODIATRIC,
+    AMERICANACADEMYOFDERMATOLOGY
+}
