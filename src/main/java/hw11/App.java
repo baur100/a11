@@ -2,6 +2,7 @@ package hw11;
 
 public class App {
     public static void main(String[] args) {
+<<<<<<< HEAD
         Mouse mouse1=new Mouse("Logitech","M510",true);
         Keybord keybord1=new Keybord("Logitech","MK335",true);
         Monitor monitorHomeAser= new Monitor("Aser","SB220Q");
@@ -34,6 +35,12 @@ public class App {
         System.out.println(cpuModel2);
         System.out.println(cpuBrand2);
         System.out.println(dickType2);
+=======
+
+        // Create 2 computers
+        // Get cpu model name and brand
+        // Get disk type;
+>>>>>>> origin/main
 
     }
 }
