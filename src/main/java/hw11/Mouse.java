@@ -5,7 +5,6 @@ public class Mouse extends Computer {
     private String model;
     public boolean isWireless;
 
-    // Add constructors, getters, toString;
 
     public Mouse(String brand, String model, Boolean isWireless){
         this.brand = brand;

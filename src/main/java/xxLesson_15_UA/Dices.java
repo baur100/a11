@@ -25,7 +25,7 @@ public class Dices {
     private static int[] getDices(int numberOfDices) {
         int[]dices = new int[numberOfDices];
         Random random = new Random();
-        for (int i=0, i<numberOfDices:i++){
+        for (int i=0; i<numberOfDices; i++){
             dices[i]=random.nextInt(6)+1;
         }
         return dices;
