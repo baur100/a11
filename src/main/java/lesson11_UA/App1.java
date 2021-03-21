@@ -1,6 +1,6 @@
 package lesson11_UA;
 
-public class App1 {
+public class  App1 {
     public static void main(String[] args) {
         Person john = new Person(new Name("John", "Amos"), 1989);
 

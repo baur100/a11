@@ -1,6 +1,6 @@
 package lesson11_UA;
 
-public class Name {
+public class  Name {
     private String name;
     private String lastName;
 

@@ -7,9 +7,10 @@ public class Keyboard extends Computer {
 
     // Add constructors, getters, toString;
 
-    public Keyboard(String brand, String model) {
+    public Keyboard(String brand, String model, boolean isWireless) {
         this.brand = brand;
         this.model = model;
+        this.isWireless = isWireless;
     }
 
     public String getBrand() {
