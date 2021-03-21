@@ -7,9 +7,7 @@ public class MotherBoard {
     private GraphicCard graphicCard;
     private Processor cpu;
 
-    // Add constructors, getters, toString;
-
-    public MotherBoard(Memory memory, String brand, String model, GraphicCard graphicCard, Processor cpu){
+    public MotherBoard(Memory memory, String brand, String model, GraphicCard graphicCard, Processor cpu) {
         this.memory = memory;
         this.brand = brand;
         this.model = model;
@@ -21,19 +19,19 @@ public class MotherBoard {
         return memory;
     }
 
-    public String getBrand(){
+    public String getBrand() {
         return brand;
     }
 
-    public String getModel(){
+    public String getModel() {
         return model;
     }
 
-    public GraphicCard getGraphicCard(){
+    public GraphicCard getGraphicCard() {
         return graphicCard;
     }
 
-    public Processor getCpu(){
+    public Processor getCpu() {
         return cpu;
     }
 

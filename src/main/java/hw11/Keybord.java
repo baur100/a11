@@ -1,12 +1,14 @@
 package hw11;
 
-public class Monitor {
+public class Keybord {
     private String brand;
     private String model;
+    public boolean isWireless;
 
-    public Monitor(String brand,String model){
+    public Keybord(String brand,String model,boolean isWireless){
         this.brand=brand;
         this.model=model;
+        this.isWireless=isWireless;
     }
     public String getBrand(){
         return brand;
@@ -17,9 +19,10 @@ public class Monitor {
 
     @Override
     public String toString() {
-        return "Monitor{" +
+        return "Keybord{" +
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
+                ", isWireless=" + isWireless +
                 '}';
     }
 }

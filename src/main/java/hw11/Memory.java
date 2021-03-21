@@ -3,21 +3,30 @@ package hw11;
 public class Memory {
     private String brand;
     private String model;
-    private String size;
+    private String memoryType;
+    private int memoryCapacity;
 
-    public Memory(String brand, String model, String size){
+    public Memory(String brand, String model, String memoryType, int memoryCapacity) {
         this.brand = brand;
         this.model = model;
-        this.size = size;
+        this.memoryType = memoryType;
+        this.memoryCapacity = memoryCapacity;
     }
-    public String getBrand(){
+
+    public String getBrand() {
         return brand;
     }
-    public String getModel(){
+
+    public String getModel() {
         return model;
     }
-    public String getSize(){
-        return size;
+
+    public String getMemoryType() {
+        return memoryType;
+    }
+
+    public int getMemoryCapacity() {
+        return memoryCapacity;
     }
 
     @Override
@@ -25,7 +34,8 @@ public class Memory {
         return "Memory{" +
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
-                ", size='" + size + '\'' +
+                ", memoryType='" + memoryType + '\'' +
+                ", memoryCapacity=" + memoryCapacity +
                 '}';
     }
 }
