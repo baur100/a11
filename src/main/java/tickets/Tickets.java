@@ -4,11 +4,10 @@ public class Tickets {
     private int age;
     private double fare;
 
-    public Tickets(int age, double fare){
+    public Tickets(int age, double fare) {
         this.age = age;
         this.fare = fare;
     }
-
     public double getPrice(){
         if (this.age<=2){
             return 0;
