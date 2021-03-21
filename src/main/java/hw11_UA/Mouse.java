@@ -1,27 +1,35 @@
-package hw11;
+package hw11_UA;
 
-public class Processor {
+public class Mouse extends Computer {
     private String brand;
     private String model;
+    public boolean isWireless;
 
-    // Add constructors, getters, toString;
 
-    public Processor(String brand, String model){
+    public Mouse(String brand, String model, Boolean isWireless){
         this.brand = brand;
         this.model = model;
+        this.isWireless = isWireless;
     }
+
     public String getBrand(){
         return brand;
     }
+
     public String getModel(){
         return model;
     }
 
+    public boolean isWireless(){
+        return isWireless;
+    }
+
     @Override
     public String toString() {
-        return "Processor{" +
+        return "Mouse{" +
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
+                ", isWireless=" + isWireless +
                 '}';
     }
 }

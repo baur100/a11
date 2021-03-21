@@ -1,27 +1,27 @@
-package hw11;
+package hw11_UA;
 
-public class PowerSupply {
+public class Monitor extends Computer {
     private String brand;
     private String model;
 
     // Add constructors, getters, toString;
 
-    public PowerSupply(String brand, String model){
+    public Monitor(String brand, String model){
         this.brand = brand;
         this.model = model;
     }
 
-    public String getBrand(){
-        return brand;
+    public String getModel() {
+        return model;
     }
 
-    public String getModel(){
-        return model;
+    public String getBrand() {
+        return brand;
     }
 
     @Override
     public String toString() {
-        return "PowerSupply{" +
+        return "Monitor{" +
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 '}';
