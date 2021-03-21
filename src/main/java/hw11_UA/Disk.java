@@ -1,4 +1,4 @@
-package hw11;
+package hw11_UA;
 
 public class Disk {    private String brand;
     private String model;

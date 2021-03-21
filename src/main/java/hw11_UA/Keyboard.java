@@ -1,4 +1,4 @@
-package hw11;
+package hw11_UA;
 
 public class Keyboard extends Computer {
     private String brand;

@@ -1,35 +1,31 @@
-package hw11;
+package hw11_UA;
 
-public class Mouse extends Computer {
+public class Memory {
     private String brand;
     private String model;
-    public boolean isWireless;
+    private String size;
 
-
-    public Mouse(String brand, String model, Boolean isWireless){
+    public Memory(String brand, String model, String size){
         this.brand = brand;
         this.model = model;
-        this.isWireless = isWireless;
+        this.size = size;
     }
-
     public String getBrand(){
         return brand;
     }
-
     public String getModel(){
         return model;
     }
-
-    public boolean isWireless(){
-        return isWireless;
+    public String getSize(){
+        return size;
     }
 
     @Override
     public String toString() {
-        return "Mouse{" +
+        return "Memory{" +
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
-                ", isWireless=" + isWireless +
+                ", size='" + size + '\'' +
                 '}';
     }
 }

@@ -1,31 +1,25 @@
-package hw11;
+package hw11_UA;
 
-public class Memory {
+public class GraphicCard {
     private String brand;
     private String model;
-    private String size;
 
-    public Memory(String brand, String model, String size){
+    public GraphicCard(String brand, String model){
         this.brand = brand;
         this.model = model;
-        this.size = size;
     }
-    public String getBrand(){
+    public String getBrand() {
         return brand;
     }
     public String getModel(){
         return model;
     }
-    public String getSize(){
-        return size;
-    }
 
     @Override
     public String toString() {
-        return "Memory{" +
+        return "GraphicCard{" +
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
-                ", size='" + size + '\'' +
                 '}';
     }
 }

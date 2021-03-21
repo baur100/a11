@@ -1,27 +1,25 @@
-package hw11;
+package hw11_UA;
 
-public class Monitor extends Computer {
+public class Processor {
     private String brand;
     private String model;
 
     // Add constructors, getters, toString;
 
-    public Monitor(String brand, String model){
+    public Processor(String brand, String model){
         this.brand = brand;
         this.model = model;
     }
-
-    public String getModel() {
-        return model;
-    }
-
-    public String getBrand() {
+    public String getBrand(){
         return brand;
+    }
+    public String getModel(){
+        return model;
     }
 
     @Override
     public String toString() {
-        return "Monitor{" +
+        return "Processor{" +
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 '}';

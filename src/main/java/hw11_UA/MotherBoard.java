@@ -1,4 +1,4 @@
-package hw11;
+package hw11_UA;
 
 public class MotherBoard {
     private Memory memory;
