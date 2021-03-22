@@ -1,6 +1,6 @@
 package hw11_UA;
 
-public class Mouse extends Computer {
+public class Mouse {
     private String brand;
     private String model;
     public boolean isWireless;
