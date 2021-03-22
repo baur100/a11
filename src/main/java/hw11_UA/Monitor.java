@@ -1,6 +1,6 @@
 package hw11_UA;
 
-public class Monitor extends Computer {
+public class Monitor {
     private String brand;
     private String model;
 

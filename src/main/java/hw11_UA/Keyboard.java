@@ -1,6 +1,6 @@
 package hw11_UA;
 
-public class Keyboard extends Computer {
+public class Keyboard {
     private String brand;
     private String model;
     public boolean isWireless;
