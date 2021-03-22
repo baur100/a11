@@ -1,13 +1,13 @@
 package homework3_17_21;
 
-public class InsuranseCompanies {
-    private InsuranseCompany company;
+public class InsuranceCompanies {
+    private InsuranceCompany company;
 
-    public InsuranseCompanies(InsuranseCompany company) {
+    public InsuranceCompanies(InsuranceCompany company) {
         this.company = company;
     }
 
-    public InsuranseCompany getCompany() {
+    public InsuranceCompany getCompany() {
         return company;
     }
 

@@ -5,10 +5,26 @@ public class Doctor {
     private String lastName;
     private Position position;
 
-    public Doctor() {
+
+    public Doctor(String name, String lastName, Position position) {
+        this.name = name;
+        this.lastName = lastName;
+        this.position = position;
+        }
+
+    public String getName() {
+        return name;
     }
 
-    public void printDoctors(String name, String lastName, Position position) {
-        System.out.println("Doctor:" + name + " " + lastName + ". Position: " + position + ".");
+    public String getLastName() {
+        return lastName;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public String toString() {
+        return ("Doctor:" + name + " " + lastName + ". Position: " + position + ".");
     }
 }

@@ -1,6 +1,6 @@
 package hw11;
 
-<<<<<<< HEAD
+
 public class Disk {
     private String model;
     public boolean isWireless;
@@ -35,12 +35,5 @@ public class Disk {
                 ", type=" + type +
                 '}';
     }
-=======
-public class Disk {    private String brand;
-    private String model;
-    public boolean isWireless;
-    private int size;
-    private DiskType type;
-    // Add constructors, getters, toString;
->>>>>>> origin/main
+
 }

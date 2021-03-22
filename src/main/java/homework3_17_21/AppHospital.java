@@ -7,6 +7,8 @@ import java.util.Map;
 
 public class AppHospital {
     public static void main(String[] args) {
+        Address addressHospital = new Address("230 Washington Street", "Newton", "MA", 24590);
+
         Map<Integer, String> rooms = new HashMap<>();
         rooms.put(10, "Physician");
         rooms.put(15, "Dentist");
@@ -14,36 +16,29 @@ public class AppHospital {
         rooms.put(23, "Neurologist");
         rooms.put(28, "Surgeon");
 
-        List<InsuranseCompanies> acceptedInsuranses = new ArrayList<>();
-        acceptedInsuranses.add(new InsuranseCompanies(InsuranseCompany.UNITEDHealthCare));
-        acceptedInsuranses.add(new InsuranseCompanies(InsuranseCompany.BlueCrossBlueShield));
-        acceptedInsuranses.add(new InsuranseCompanies(InsuranseCompany.HUMANA));
-        acceptedInsuranses.add(new InsuranseCompanies(InsuranseCompany.BMCHealthNET));
+        List<InsuranceCompanies> acceptedInsuranses = new ArrayList<>();
+        acceptedInsuranses.add(new InsuranceCompanies(InsuranceCompany.UNITEDHealthCare));
+        acceptedInsuranses.add(new InsuranceCompanies(InsuranceCompany.BlueCrossBlueShield));
+        acceptedInsuranses.add(new InsuranceCompanies(InsuranceCompany.HUMANA));
+        acceptedInsuranses.add(new InsuranceCompanies(InsuranceCompany.BMCHealthNET));
 
-        Hospital hospital = new Hospital();
-        Address addressHospital = new Address();
+        List<Doctor> doctorList=new ArrayList<>();
 
-        hospital.printHospitalInfo("Newton-Wellesley", new Address("230 Washington Street", "Newton", "MA", 24590));
+        Doctor matthew = new Doctor("Matthew", "Johnson", Position.PHYSICIAN);
+        Doctor michel = new Doctor("Michel", "Smith", Position.SURGEON);
+        Doctor jennifer = new Doctor("Jennifer", "Brown", Position.NEUROLOGIST);
+        Doctor sophia = new Doctor("Sophia", "Miller", Position.OPTOMETRIST);
+        Doctor emma = new Doctor("Emma", "Davis", Position.DENTIST);
 
-        for (InsuranseCompanies v : acceptedInsuranses) {
-            System.out.println(v);
-        }
+        doctorList.add(matthew);
+        doctorList.add(michel);
+        doctorList.add(jennifer);
+        doctorList.add(sophia);
+        doctorList.add(emma);
 
-        Doctor matthew = new Doctor();
-        Doctor michel = new Doctor();
-        Doctor jennifer = new Doctor();
-        Doctor sophia = new Doctor();
-        Doctor emma = new Doctor();
+        Hospital hospital = new Hospital("Newton-Wellesley",addressHospital,doctorList,acceptedInsuranses,rooms);
 
-        matthew.printDoctors("Matthew", "Johnson", Position.PHYSICIAN);
-        michel.printDoctors("Michel", "Smith", Position.SURGEON);
-        jennifer.printDoctors("Jennifer", "Brown", Position.NEUROLOGIST);
-        sophia.printDoctors("Sophia", "Miller", Position.OPTOMETRIST);
-        emma.printDoctors("Emma", "Davis", Position.DENTIST);
-
-        for (Map.Entry<Integer, String> entry : rooms.entrySet()) {
-            System.out.println("Room#"+entry.getKey() + "-" + entry.getValue());
-        }
+        hospital.printInfo();
     }
 }
 

@@ -1,6 +1,6 @@
 package homework3_17_21;
 
-public enum InsuranseCompany {
+public enum InsuranceCompany {
     BMCHealthNET,
     HUMANA,
     UNITEDHealthCare,
