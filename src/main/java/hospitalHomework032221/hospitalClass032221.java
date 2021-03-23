@@ -1,16 +1,18 @@
 package hospitalHomework032221;
 
-public class hospitalClass032221 extends addressClass03221  {
+//public class hospitalClass032221 extends addressClass03221  {
+
+public class hospitalClass032221 {
 
 protected String hospitalName;
 
     public hospitalClass032221(String hospitalName, String hospitalName1) {
-        super(hospitalName);
+//        super(hospitalName);
         this.hospitalName = hospitalName1;
     }
 
     public hospitalClass032221(String hospitalName, String streetAddress, String town, String state, int zip, String hospitalName1) {
-        super(hospitalName, streetAddress, town, state, zip);
+//        super(hospitalName, streetAddress, town, state, zip);
         this.hospitalName = hospitalName1;
     }
 
