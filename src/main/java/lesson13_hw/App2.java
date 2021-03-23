@@ -1,10 +1,12 @@
 package lesson13_hw;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class App2 {
     public static void main (String[] args){
-        ArrayList<String> list = new ArrayList<>();
+       /* String[] list = new String[10];*/
+        List<String> list = new  ArrayList<>();
         list.add("sofa");
         list.add("chair");
         list.add("table");
@@ -19,9 +21,9 @@ public class App2 {
         for (String s:list) {
           System.out.println(s);
 
-          /*Test test1= new Test();
+          Test test1= new Test();
           test1.name= "Ola";
-          System.out.println("Ola");*/
+          System.out.println("Ola");
 
         }
     }
