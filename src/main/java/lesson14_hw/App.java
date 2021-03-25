@@ -3,7 +3,7 @@ package lesson14_hw;
 import java.util.HashSet;
 import java.util.Set;
 
-public class APP {
+public class App {
     public static void main(String[] args) {
         Set<String> cities = new HashSet<>();
         cities.add("Riga");
