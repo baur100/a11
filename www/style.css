@@ -1,0 +1,11 @@
+h1 {
+color:red;
+font-family: "courier";
+}
+[class='new'] {
+color: green;
+font-size: 25px;
+}
+[id='ee'] {
+color:blue
+}
