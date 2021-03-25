@@ -25,7 +25,6 @@ public class UdemyTest {
 
         Thread.sleep(5000);
         driver.quit();
-        //check
 
     }
 }
