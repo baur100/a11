@@ -51,9 +51,5 @@ public class App {
         for (Shopper i : shoppers){
             System.out.println(i);
         }
-        // // Failed to display name of the shopper
-        //for (Shopper i : shoppers){
-        //    System.out.println(shoppers.get(i).getName());
-        //}
     }
 }
