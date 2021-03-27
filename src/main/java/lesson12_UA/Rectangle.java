@@ -23,7 +23,7 @@ public class Rectangle implements Shape{
     public double getArea() {
         return width*length;
     }
-    public final void getInfo(){
+    public final void getInfo() {
         System.out.println("XXXXXXX");
     }
 }

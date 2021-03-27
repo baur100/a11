@@ -1,6 +1,6 @@
 package lesson12_UA;
 
-public interface AmericanElectricalPlug {
+public interface  AmericanElectricalPlug {
     void americanPlug();
 }
 

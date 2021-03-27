@@ -1,6 +1,6 @@
 package lesson12_UA;
 
-public interface Shape {
+public interface  Shape {
     void draw();
     double getPerimeter();
     double getArea();
