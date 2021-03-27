@@ -2,7 +2,7 @@ package xxLesson15;
 
 import java.util.HashSet;
 import java.util.Set;
-
+//locating duplicates in an array
 public class Dublicate {
     public static void main(String[] args) {
         int[] numbers = {1,4,5,89,8,9,9,0,12,2,11,12,67,89,1,89};

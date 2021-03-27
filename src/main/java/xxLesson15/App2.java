@@ -4,7 +4,7 @@ public class App2 {
     public static void main(String[] args) {
         primeNumbers(100);
     }
-
+    //print out all prime numbers between 1 and 100
     private static void primeNumbers(int limit) {
         for (int i=2;i<limit;i++){
             if(isPrime(i)){
