@@ -5,16 +5,27 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AITPTest033021A {
-    @Test
+public class simpleKoelAppLoginTest033021 {
+        @Test
     public void AITPLATest033021A() throws InterruptedException {
-        Thread.sleep(3000);
+
+
         System.setProperty("webdriver.chrome.driver","chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.get("https://www.aitp-la.org/");
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        driver.get("http://koelapp.testpro.io");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[type='email']")));
+        WebElement email = driver.findElement(By.cssSelector("[type='email']"));
+        WebElement password = driver.findElement(By.cssSelector("[type='password']"));
+        WebElement button = driver.findElement(By.tagName("button"));
+        email.sendKeys("koeluser06@testpro.io");
+        password.sendKeys("te$t$tudent");
+        button.click();
         //using classname below:
         //WebElement enterEmailAddress = driver.findElement(By.className("gem-field.gem-required"));
         //enterEmailAddress.sendKeys("Java@java.com");
