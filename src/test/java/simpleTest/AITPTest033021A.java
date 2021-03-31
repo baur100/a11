@@ -8,22 +8,24 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AITPTest032721 {
+public class AITPTest033021A {
     @Test
-    public void AITPLATest() throws InterruptedException {
+    public void AITPLATest033021A() throws InterruptedException {
+        Thread.sleep(3000);
         System.setProperty("webdriver.chrome.driver","chromedriver.exe");
-
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.aitp-la.org/");
-        //using tagname below:
-        WebElement result = driver.findElement(By.tagName("h1"));
-         //using relative xpath below:
-        WebElement searchField = driver.findElement(By.xpath("//*[@id=\"form_1_signup[email]\"]"));
-        searchField.sendKeys("Java@java.com");
+        //using classname below:
+        //WebElement enterEmailAddress = driver.findElement(By.className("gem-field.gem-required"));
+        //enterEmailAddress.sendKeys("Java@java.com");
+
+        //using relative xpath below:
+        //WebElement searchField = driver.findElement(By.xpath("//*[@id=\"form_1_signup[email]\"]"));
+        //searchField.sendKeys("Java@java.com");
         //using absolute xpath below:
-        WebElement searchField1 = driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div/div[2]/div[2]/div/div[2]/form/p[2]/input"));
-        searchField1.sendKeys("Test");
-        searchField1.sendKeys(Keys.RETURN);
+        //WebElement searchField1 = driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div/div[2]/div[2]/div/div[2]/form/p[2]/input"));
+        //searchField1.sendKeys("Test");
+        //searchField1.sendKeys(Keys.RETURN);
 
 
 
@@ -36,4 +38,5 @@ public class AITPTest032721 {
         Thread.sleep(5000);
         driver.quit();
     }
-}
+
+}//end of class
