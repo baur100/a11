@@ -1,9 +1,6 @@
 package pageObjects;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -27,13 +24,39 @@ public class MainPage {
             return false;
         }
     }
+    private WebElement getNewPlaylistField(){
+        return driver.findElement(By.xpath("//*[@class='create']/input"));
+    }
+    private void clickPlusButton() {
+        By plusButtonBy = By.cssSelector(".fa-plus-circle");
+        wait.until(ExpectedConditions.elementToBeClickable(plusButtonBy));
+        for (int i=0;i<5;i++){
+            try{
+                driver.findElement(plusButtonBy).click();
+                return;
+            } catch (ElementClickInterceptedException ignored){
+
+            }
+        }
+    }
 
     public String createPlaylist(String playlistName) {
-        String playlistId="11";
-        return playlistId;
+        clickPlusButton();
+        getNewPlaylistField().sendKeys(playlistName);
+        getNewPlaylistField().sendKeys(Keys.RETURN);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='success show']")));
+        return driver.getCurrentUrl().split("/")[5];
     }
 
     public boolean isPlaylistExist(String playlistId, String playlistName) {
-        return true;
+        try{
+            return driver.findElement(By.xpath("//*[@href='#!/playlist/"+playlistId+"']")).getText().equals(playlistName);
+        } catch (NoSuchElementException xx){
+            return false;
+        }
+
+    }
+
+    public void renamePlaylist(String playlistId, String newName) {
     }
 }
