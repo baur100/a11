@@ -1,6 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -15,6 +16,12 @@ public class MainPage {
         By homeBy = By.className("logout");
         wait.until(ExpectedConditions.visibilityOfElementLocated(homeBy));
         return driver.findElement(homeBy);
+    }
+    private WebElement getPlaylistById(String playlistId){
+        return driver.findElement(By.xpath("//*[@href='#!/playlist/"+playlistId+"']"));
+    }
+    private WebElement getPlaylistEditField(){
+        return driver.findElement(By.xpath("//*[@class='playlist playlist editing']/input"));
     }
 
     public boolean isMainPage() {
@@ -50,13 +57,20 @@ public class MainPage {
 
     public boolean isPlaylistExist(String playlistId, String playlistName) {
         try{
-            return driver.findElement(By.xpath("//*[@href='#!/playlist/"+playlistId+"']")).getText().equals(playlistName);
+            return getPlaylistById(playlistId).getText().equals(playlistName);
         } catch (NoSuchElementException xx){
             return false;
         }
-
     }
 
     public void renamePlaylist(String playlistId, String newName) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement playlist = getPlaylistById(playlistId);
+        js.executeScript("arguments[0].scrollIntoView();", playlist);
+        Actions actions = new Actions(driver);
+        actions.doubleClick(playlist).perform();
+        getPlaylistEditField().sendKeys(Keys.CONTROL+"a");
+        getPlaylistEditField().sendKeys(newName);
+        getPlaylistEditField().sendKeys(Keys.ENTER);
     }
 }

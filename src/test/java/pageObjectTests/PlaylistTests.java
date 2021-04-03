@@ -53,5 +53,4 @@ public class PlaylistTests {
 
         Assert.assertTrue(mainPage.isPlaylistExist(playlistId,newName));
     }
-
 }
