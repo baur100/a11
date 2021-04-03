@@ -30,7 +30,7 @@ public class PlaylistTests {
         loginPage.open();
         MainPage mainPage = loginPage.loginToApp("koeluser06@testpro.io","te$t$tudent");
         String playlistId = mainPage.createPlaylist(playlistName);
-       //Assert.assertTrue(mainPage.isPlaylistExist(playlistId,playlistName));
+        Assert.assertTrue(mainPage.isPlaylistExist(playlistId,playlistName));
 
     }
 
