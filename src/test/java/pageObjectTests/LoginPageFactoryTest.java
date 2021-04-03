@@ -7,10 +7,10 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pageObjects.LoginPage;
 import pageObjects.MainPage;
+import pageObjects.LoginPageFactory;
 
-public class PlaylistTests {
+public class LoginPageFactoryTest {
     private WebDriver driver;
     @BeforeMethod
     public void startUp(){
@@ -24,13 +24,18 @@ public class PlaylistTests {
         driver.quit();
     }
     @Test
-    public void playlistTest_createPlaylist_playlistCreated(){
-        String playlistName = "XX";
-        LoginPage loginPage = new LoginPage(driver);
+    public void loginTest_loginWithCorrectCredentials_mainPageOpened(){
+        LoginPageFactory loginPage = new LoginPageFactory(driver);
         loginPage.open();
         MainPage mainPage = loginPage.loginToApp("koeluser06@testpro.io","te$t$tudent");
-        String playlistId = mainPage.createPlaylist(playlistName);
-        Assert.assertTrue(mainPage.isPlaylistExist(playlistId,playlistName));
+        Assert.assertTrue(mainPage.isMainPage());
+    }
+    @Test
+    public void loginTest_loginWithIncorrectCredentials_errorFrame(){
+        LoginPageFactory loginPage = new LoginPageFactory(driver);
+        loginPage.open();
+        loginPage.loginToApp("koeluser06@testpro.io","wrongPassword");
+        Assert.assertTrue(loginPage.isErrorFrame());
 
     }
 }
