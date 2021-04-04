@@ -1,5 +1,6 @@
 package simpleTest;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,8 @@ import org.testng.annotations.Test;
 public class UdemyTest2 {
     @Test
     public void searchInUdemy() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        WebDriverManager.chromedriver().setup(); // this is a static method
+//        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.udemy.com");
