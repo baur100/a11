@@ -1,9 +1,7 @@
 package pageObjects;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,6 +17,12 @@ public class MainPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(homeBy));
         return driver.findElement(homeBy);
     }
+    private WebElement getPlaylistById(String playlistId){
+        return driver.findElement(By.xpath("//*[@href='#!/playlist/"+playlistId+"']"));
+    }
+    private WebElement getPlaylistEditField(){
+        return driver.findElement(By.xpath("//*[@class='playlist playlist editing']/input"));
+    }
 
     public boolean isMainPage() {
         try {
@@ -27,13 +31,46 @@ public class MainPage {
             return false;
         }
     }
+    private WebElement getNewPlaylistField(){
+        return driver.findElement(By.xpath("//*[@class='create']/input"));
+    }
+    private void clickPlusButton() {
+        By plusButtonBy = By.cssSelector(".fa-plus-circle");
+        wait.until(ExpectedConditions.elementToBeClickable(plusButtonBy));
+        for (int i=0;i<5;i++){
+            try{
+                driver.findElement(plusButtonBy).click();
+                return;
+            } catch (ElementClickInterceptedException ignored){
+
+            }
+        }
+    }
 
     public String createPlaylist(String playlistName) {
-        String playlistId="11";
-        return playlistId;
+        clickPlusButton();
+        getNewPlaylistField().sendKeys(playlistName);
+        getNewPlaylistField().sendKeys(Keys.RETURN);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='success show']")));
+        return driver.getCurrentUrl().split("/")[5];
     }
 
     public boolean isPlaylistExist(String playlistId, String playlistName) {
-        return true;
+        try{
+            return getPlaylistById(playlistId).getText().equals(playlistName);
+        } catch (NoSuchElementException xx){
+            return false;
+        }
+    }
+
+    public void renamePlaylist(String playlistId, String newName) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement playlist = getPlaylistById(playlistId);
+        js.executeScript("arguments[0].scrollIntoView();", playlist);
+        Actions actions = new Actions(driver);
+        actions.doubleClick(playlist).perform();
+        getPlaylistEditField().sendKeys(Keys.CONTROL+"a");
+        getPlaylistEditField().sendKeys(newName);
+        getPlaylistEditField().sendKeys(Keys.ENTER);
     }
 }
