@@ -1,12 +1,11 @@
 package simpleSeleniumApolloTest040321;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class pageLoginTest040321 {
@@ -31,17 +30,21 @@ public class pageLoginTest040321 {
 
     public void loginTesting(String userName, String passWord) {
         //good login below:
+        System.out.println("userName " + userName + "passWord " + passWord );
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#login-email-input")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#ctl00_ContentPlaceHolder1_txtUserName")));
         WebElement emailLogin = driver.findElement(By.cssSelector("#ctl00_ContentPlaceHolder1_txtUserName"));
-        emailLogin.sendKeys("klingergk@mail.com");
+        //emailLogin.sendKeys("klingergk@mail.com");
+        emailLogin.sendKeys(userName);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#ctl00_ContentPlaceHolder1_txtPassword")));
         WebElement thePassWord = driver.findElement(By.cssSelector("#ctl00_ContentPlaceHolder1_txtPassword"));
-        thePassWord.sendKeys("GeorgeSmith123!");
+        thePassWord.sendKeys(passWord);
         WebDriverWait waitOne = new WebDriverWait(driver, 60);
         WebElement Submitbutton = driver.findElement(By.cssSelector("#btnLogin"));
+        System.out.println("Clicking Submit button");
         Submitbutton.click();
+
 
         //if we were able to login successfully, then the memberprofiledropdown control will display, check if
         //control exists, if so, then logout.
@@ -52,11 +55,19 @@ public class pageLoginTest040321 {
             logoutDropDown.click();
             WebElement logoutOption = driver.findElement(By.cssSelector("#memberProfileLogout > a"));
             logoutOption.click();
+            //driver.close();
+            driver.quit();
+        }
+         else {
+            WebElement logoutDropDown = driver.findElement(By.cssSelector("#memberProfileDropdown"));
+            logoutDropDown.click();
+            WebElement logoutOption = driver.findElement(By.cssSelector("#memberProfileLogout > a"));
+            logoutOption.click();
+        } //end of elses
+        } //end of login test
+         //driver.quit();
 
-
-            //return testDeletelater;
-
-        } //end of if loop
+         //}
         //control not present, need to quit test
 
        /* driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -72,7 +83,7 @@ public class pageLoginTest040321 {
 
         /*
         } */
-    }
+    //}
 
 
         public String executeLoginTest (String userName, String passWord){
