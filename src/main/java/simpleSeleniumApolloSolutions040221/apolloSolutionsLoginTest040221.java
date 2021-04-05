@@ -40,6 +40,12 @@ private Boolean testResult;
         Boolean isPresent = driver.findElements(By.cssSelector("#memberProfileDropdown")).size() > 0;
         if (isPresent) {
             System.out.println("Control detected");
+            WebElement logoutDropDown = driver.findElement(By.cssSelector("#memberProfileDropdown"));
+            logoutDropDown.click();
+            WebElement logoutOption = driver.findElement(By.cssSelector("#memberProfileLogout > a"));
+            logoutOption.click();
+            testResult = true;
+
         }
 
 

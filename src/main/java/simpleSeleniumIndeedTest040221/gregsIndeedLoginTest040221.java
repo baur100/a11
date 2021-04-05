@@ -1,4 +1,4 @@
-package simpleSeleniumTests040221;
+package simpleSeleniumIndeedTest040221;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,9 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
-import java.util.List;
-import java.util.Set;
-import java.util.Iterator;
 
 public class gregsIndeedLoginTest040221 {
     public static void main(String[] args) {
