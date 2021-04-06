@@ -3,14 +3,10 @@ package pageObjects;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class MainPage {
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class MainPage extends BasePage{
     public MainPage(WebDriver driver) {
-        this.driver = driver;
-        wait = new WebDriverWait(driver,10,200);
+        super(driver);
     }
     private WebElement getHomeButton(){
         By homeBy = By.className("logout");
@@ -32,6 +28,7 @@ public class MainPage {
         }
     }
     private WebElement getNewPlaylistField(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='create']/input")));
         return driver.findElement(By.xpath("//*[@class='create']/input"));
     }
     private void clickPlusButton() {
@@ -39,6 +36,8 @@ public class MainPage {
         wait.until(ExpectedConditions.elementToBeClickable(plusButtonBy));
         for (int i=0;i<5;i++){
             try{
+                Actions actions = new Actions(driver);
+                actions.click(driver.findElement(plusButtonBy)).build().perform();
                 driver.findElement(plusButtonBy).click();
                 return;
             } catch (ElementClickInterceptedException ignored){
