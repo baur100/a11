@@ -8,6 +8,8 @@ public class carClass040321 {
     private boolean carTurning;
     private String carTurningStatus; //used to note if the car is turning.
     private String carRunningStatus; //used to note if the car is running.
+    //private boolean carPassengerDoorOpening; //used in method. Do I need to declare this here??
+    //private String carTrunkResult; //used in method. Do I need to declare this here??
 
     //first step: create private variables above
 
@@ -22,7 +24,7 @@ public class carClass040321 {
     //third step: Create methods in the class that can be run.
 
       public String theCarTurning(boolean carTurning)  {
-        if (carTurning = true) {
+        if (carTurning == true) {
             carTurningStatus = "The Car is Turning";
         } else {
             carTurningStatus = "The Car is driving Straight";
@@ -32,7 +34,7 @@ public class carClass040321 {
 
 
     public String theCarRunning (boolean carRunning) {
-        if (carRunning = true) {
+        if (carRunning == true) {
             carRunningStatus = "The Car is Running";
         }
         else {
@@ -40,6 +42,32 @@ public class carClass040321 {
         }
         return carRunningStatus;
     } //end of theCarRunning
+
+
+    public static void thePassengerDoorOpening (boolean carPassengerDoorOpening) {
+       if (carPassengerDoorOpening == true) {
+
+            System.out.println("The door is open");
+        }
+        else {
+            System.out.println("The door is closed");
+        }
+        //return void;
+
+    } //end of thePassengerDoorOpening
+
+    public static String theTrunkOpening(boolean trunkOpening) {
+          String carTrunkResult;
+        if (trunkOpening == true) {
+            System.out.println("Trunk is Open");
+            carTrunkResult = "Hey Man, the Trunk is Open";
+        } else {
+            System.out.println("Trunk is Closed");
+            carTrunkResult = "Hey Man, the Trunk is Closed";
+
+        }
+        return carTrunkResult; //end of theTrunkOpening
+    }
 
     //fourth step: create getters and setters
     public String getCarManufacturer() {
