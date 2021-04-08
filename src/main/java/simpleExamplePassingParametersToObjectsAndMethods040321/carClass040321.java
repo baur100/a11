@@ -43,6 +43,10 @@ public class carClass040321 {
         return carRunningStatus;
     } //end of theCarRunning
 
+    //static methods below. These do not need to be instantiated. They can be run from main directly.
+    //thePassengerDoorOpening method, takes in a boolean, and does not return a value.
+    //trunkOpening takes in a boolean, and returns a value.
+
 
     public static void thePassengerDoorOpening (boolean carPassengerDoorOpening) {
        if (carPassengerDoorOpening == true) {

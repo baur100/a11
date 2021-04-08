@@ -1,4 +1,4 @@
-package pageFactoryKoelappLoginTest040521;
+package pageFactoryKoelappLoginTest040521DeleteLater;
 //example of using pageFactory
 //From: https://github.com/SeleniumHQ/selenium/wiki/PageFactory
 
@@ -10,7 +10,6 @@ package pageFactoryKoelappLoginTest040521;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import pageFactoryGoogleSearchTest040521.pageFactoryGoogleSearchClass040521;
 
 
 public class pageFactoryKoelAppSearchMain040521 {
@@ -21,14 +20,19 @@ public class pageFactoryKoelAppSearchMain040521 {
         WebDriver driver = new ChromeDriver();
 
         // Navigate to the right place
-        driver.get("http://www.google.com/");
+        driver.get("https://koelapp.testpro.io/");
 
-        // Create a new instance of the search page class
+        // Create a new instance of the s
+        // earch page class
         // and initialise any WebElement fields in it.
-        pageFactoryGoogleSearchTest040521.pageFactoryGoogleSearchClass040521 page = PageFactory.initElements(driver, pageFactoryGoogleSearchClass040521.class);
+        //pageFactoryGoogleSearchTest040521.pageFactoryGoogleSearchClass040521 page = PageFactory.initElements(driver, pageFactoryGoogleSearchClass040521.class);
+
+        pageFactoryKoelappLoginTest040521DeleteLater.pageFactoryKoellAppSearchClass040521 page = PageFactory.initElements(driver,pageFactoryKoellAppSearchClass040521.class);
+
 
         // And now do the search.
         page.searchFor("Cheese");
+
 
     } //end of main
 
