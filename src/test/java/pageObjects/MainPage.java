@@ -17,7 +17,8 @@ public class MainPage extends BasePage{
         return driver.findElement(By.xpath("//*[@href='#!/playlist/"+playlistId+"']"));
     }
     private WebElement getPlaylistEditField(){
-        return driver.findElement(By.xpath("//*[@class='playlist playlist editing']/input"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("[@type='text']")));
+        return driver.findElement(By.xpath("//*[@type='text']"));
     }
 
     public boolean isMainPage() {
@@ -39,6 +40,7 @@ public class MainPage extends BasePage{
                 Actions actions = new Actions(driver);
                 actions.click(driver.findElement(plusButtonBy)).build().perform();
                 driver.findElement(plusButtonBy).click();
+                driver.findElement(By.xpath("//*[text()='New Playlist']")).click();
                 return;
             } catch (ElementClickInterceptedException ignored){
 
@@ -67,7 +69,8 @@ public class MainPage extends BasePage{
         WebElement playlist = getPlaylistById(playlistId);
         js.executeScript("arguments[0].scrollIntoView();", playlist);
         Actions actions = new Actions(driver);
-        actions.doubleClick(playlist).perform();
+        actions.doubleClick(playlist).build().perform();
+//        actions.doubleClick(playlist).build().perform();
         getPlaylistEditField().sendKeys(Keys.CONTROL+"a");
         getPlaylistEditField().sendKeys(newName);
         getPlaylistEditField().sendKeys(Keys.ENTER);
