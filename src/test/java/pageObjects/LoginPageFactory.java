@@ -28,8 +28,8 @@ public class  LoginPageFactory {
     @FindBy(className = "error")
     private WebElement error;
 
-    public void open() {
-        driver.get("http://koelapp.testpro.io");
+    public void open(String url) {
+        driver.get(url);
     }
 
     public boolean isErrorFrame() {

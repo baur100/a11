@@ -7,11 +7,8 @@ import tickets.Tickets;
 public class UnitTest {
     @Test
     public void unitTest_testInfant_priceZero(){
-        // Arrange
         Tickets infant = new Tickets(1,1000);
-        // Act
         double result = infant.getPrice();
-        // Assert
         Assert.assertEquals(result,0.0);
     }
 
