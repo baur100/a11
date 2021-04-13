@@ -7,9 +7,9 @@
     <parameter name="browser" value="chrome"/>
     <test name="All tests">
         <classes>
-            <class name="pageObjectTests.LoginTests">
+            <class name="pageObjectTests.PlaylistTests">
                 <methods>
-                    <include name="loginTest_loginWithCorrectCredentials_mainPageOpened"/>
+                    <include name="playlistTest_createPlaylist_playlistCreated"/>
                 </methods>
             </class>
         </classes>
