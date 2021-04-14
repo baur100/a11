@@ -1,10 +1,13 @@
 package pageObjects;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class MainPage extends BasePage{
+    private static Logger logger = LogManager.getLogger(MainPage.class);
     public MainPage(WebDriver driver) {
         super(driver);
     }
@@ -33,17 +36,21 @@ public class MainPage extends BasePage{
         return driver.findElement(By.xpath("//*[@class='create']/input"));
     }
     private void clickPlusButton() {
+        logger.trace("I'm in click plusButton method");
         By plusButtonBy = By.cssSelector(".fa-plus-circle");
+        logger.info("By -> Created By css selector .fa-plus-circle");
         wait.until(ExpectedConditions.elementToBeClickable(plusButtonBy));
+        logger.debug("waited until element become clickable");
         for (int i=0;i<5;i++){
             try{
+                logger.warn("in the try block");
                 Actions actions = new Actions(driver);
                 actions.click(driver.findElement(plusButtonBy)).build().perform();
                 driver.findElement(plusButtonBy).click();
                 driver.findElement(By.xpath("//*[text()='New Playlist']")).click();
                 return;
             } catch (ElementClickInterceptedException ignored){
-
+                logger.error("In the catch block");
             }
         }
     }
