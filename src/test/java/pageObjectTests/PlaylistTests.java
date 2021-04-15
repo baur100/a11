@@ -1,21 +1,22 @@
 package pageObjectTests;
 
 import com.github.javafaker.Faker;
+import listeners.RetryAnalyzer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
-import org.testng.ITest;
-import org.testng.ITestContext;
+
 import org.testng.annotations.Test;
 import pageObjects.LoginPage;
 import pageObjects.MainPage;
 
 public class PlaylistTests extends BaseTest{
     private static Logger logger = LogManager.getLogger(PlaylistTests.class);
-    @Test
-    public void playlistTest_createPlaylist_playlistCreated(ITestContext test) {
+
+    @Test(retryAnalyzer = RetryAnalyzer.class)
+    public void playlistTest_createPlaylist_playlistCreated() {
         logger.debug("==============================");
-        logger.debug("In the test "+test.getName());
+        logger.debug("In the test ");
         Faker faker = new Faker();
         logger.debug("Faker created");
         String playlistName = faker.funnyName().name();
@@ -30,6 +31,12 @@ public class PlaylistTests extends BaseTest{
         String playlistId = mainPage.createPlaylist(playlistName);
         logger.info("Created playlist id = "+playlistId);
         Assert.assertTrue(mainPage.isPlaylistExist(playlistId,playlistName));
+        boolean pass = false;
+        if(errorCount == 2){
+            pass=true;
+        }
+        errorCount++;
+        Assert.assertTrue(pass);
         logger.info("Assert passed");
     }
     @Test(enabled = false)
