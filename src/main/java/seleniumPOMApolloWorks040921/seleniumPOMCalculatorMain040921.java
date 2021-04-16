@@ -19,15 +19,15 @@ public class seleniumPOMCalculatorMain040921 {
 
         //Use page Object library now
         //seleniumPOMCalcClass040921.lnk_math_calc(driver).click();
-        seleniumPOMCalcClass040921.txtEmail(driver).clear();
-        seleniumPOMCalcClass040921.txtEmail(driver).sendKeys("klingergk@mail.com");
+        seleniumPOMLoginPage040921.txtEmail(driver).clear();
+        seleniumPOMLoginPage040921.txtEmail(driver).sendKeys("klingergk@mail.com");
         System.out.println("past first section");
 
-        seleniumPOMCalcClass040921.txtPassword(driver).clear();
-        seleniumPOMCalcClass040921.txtPassword(driver).sendKeys("GeorgeSmith123!");
+        seleniumPOMLoginPage040921.txtPassword(driver).clear();
+        seleniumPOMLoginPage040921.txtPassword(driver).sendKeys("GeorgeSmith123!");
         System.out.println("past second section");
 
-        seleniumPOMCalcClass040921.btnSubmit(driver).click();
+        seleniumPOMLoginPage040921.btnSubmit(driver).click();
 
         /* seleniumPOMCalcClass040921.txt_num_1(driver).clear();
         seleniumPOMCalcClass040921.txt_num_1(driver).sendKeys("10");
@@ -45,7 +45,18 @@ public class seleniumPOMCalculatorMain040921 {
             System.out.println(" The Result is Fail");
         } */
 
-        driver.close();
+
+        //seleniumPOMMainPage041521.btnEditProfile(driver).click();
+
+        seleniumPOMMainPage041521.selectMyAccountProfileDropDown(driver).click();
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        seleniumPOMMainPage041521.selectAccountProfile(driver).click();
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        //driver.close();
     }
 
 

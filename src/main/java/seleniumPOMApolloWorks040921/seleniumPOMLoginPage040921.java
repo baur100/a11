@@ -3,7 +3,7 @@ package seleniumPOMApolloWorks040921;
 import org.openqa.selenium.*;
 import org.openqa.selenium.WebElement;
 
-public class seleniumPOMCalcClass040921 {
+public class seleniumPOMLoginPage040921 {
 
     private static WebElement element = null;
 
@@ -13,6 +13,7 @@ public class seleniumPOMCalcClass040921 {
         return element;
         }*/
 
+   //Typing
     public static WebElement txtEmail (WebDriver driver) {
         element = driver.findElement(By.cssSelector("#ctl00_ContentPlaceHolder1_txtUserName"));
         return element;

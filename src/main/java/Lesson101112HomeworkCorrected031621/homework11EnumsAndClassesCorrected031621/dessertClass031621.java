@@ -9,13 +9,16 @@ public class dessertClass031621 {
 
     public dessertClass031621(enumDessert031421 dessertdish, enumDessertSize031621 dessertSize, int numberofDesserts) {
 
+        this.dessertdish = dessertdish;
+        this.numberofDesserts = numberofDesserts;
+        this.dessertSize = dessertSize;
         this.numberofDesserts = numberofDesserts;
     }
 
 
     @Override
     public String toString() {
+        //return "dessertClass031421  Dessertdishfromenum: " + dessertdish + ", DessertSize: " + dessertSize + " NumberofDesserts: " + numberofDesserts;
         return "dessertClass031421  Dessertdishfromenum: " + dessertdish + ", DessertSize: " + dessertSize + " NumberofDesserts: " + numberofDesserts;
-
     }
 } //end of class

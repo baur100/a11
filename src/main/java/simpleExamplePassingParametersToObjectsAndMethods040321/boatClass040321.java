@@ -21,7 +21,7 @@ String boatMovingStatus;
         return boatMovingStatus;
     }
 
-    public String getBoatMaker() {
+    /* public String getBoatMaker() {  //using the constructor to take vales..don't need getter/setter
         return boatMaker;
     }
 
@@ -51,7 +51,7 @@ String boatMovingStatus;
 
     public void setBoatMovingStatus(String boatMovingStatus) {
         this.boatMovingStatus = boatMovingStatus;
-    }
+    }   */
 
     @Override
     public String toString() {

@@ -15,7 +15,7 @@ public class simpleObjectsForPassingParameters040221 {
 
     } //end of constructor
 
-    public String getUserName () {
+   /* public String getUserName () {  //getters and setters not needed..using the constructor.
         return userName;
     }
 
@@ -29,7 +29,7 @@ public class simpleObjectsForPassingParameters040221 {
 
     public void setPassWord (String passWord){
         this.passWord = passWord;
-    }
+    } */
 
 
     @Override

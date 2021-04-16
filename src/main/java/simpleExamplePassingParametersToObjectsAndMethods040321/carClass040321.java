@@ -74,7 +74,7 @@ public class carClass040321 {
     }
 
     //fourth step: create getters and setters
-    public String getCarManufacturer() {
+   /*  public String getCarManufacturer() {   //don't need getters/setters
         return carManufacturer;
     }
 
@@ -112,7 +112,7 @@ public class carClass040321 {
 
     public void setCarTurning(boolean carTurning) {
         this.carTurning = carTurning;
-    }
+    } */
     //fifth step: create toString()
     @Override
     public String toString() {
