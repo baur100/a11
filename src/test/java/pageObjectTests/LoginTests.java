@@ -62,6 +62,5 @@ public class LoginTests extends BaseTest{
         loginPage.open(url);
         loginPage.loginToApp(username,"wrongPassword");
         Assert.assertTrue(loginPage.isErrorFrame());
-        Assert.assertTrue(loginPage.isErrorFrameEmpry());
     }
 }
