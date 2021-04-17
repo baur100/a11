@@ -56,12 +56,12 @@ public class LoginTests extends BaseTest{
         MainPage mainPage = loginPage.loginToApp(username,password);
         Assert.assertTrue(mainPage.isMainPage());
     }
- //   @Test
-//    public void loginTest_loginWithIncorrectCredentials_errorFrame3(){
-//        LoginPage loginPage = new LoginPage(driver);
-//        loginPage.open(url);
-//        loginPage.loginToApp(username,"wrongPassword");
-//        Assert.assertTrue(loginPage.isErrorFrame());
-//        Assert.assertTrue(loginPage.isErrorFrameEmpry());
-//    }
+    @Test(enabled = false)
+    public void loginTest_loginWithIncorrectCredentials_errorFrame3(){
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.open(url);
+        loginPage.loginToApp(username,"wrongPassword");
+        Assert.assertTrue(loginPage.isErrorFrame());
+        Assert.assertTrue(loginPage.isErrorFrameEmpry());
+    }
 }
