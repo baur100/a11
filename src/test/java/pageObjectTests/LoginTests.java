@@ -25,7 +25,7 @@ public class LoginTests extends BaseTest{
     public void loginTest_loginWithCorrectCredentials_mainPageOpened1(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open(url);
-        MainPage mainPage = loginPage.loginToApp(username,password+"5");
+        MainPage mainPage = loginPage.loginToApp(username,password);
         Assert.assertTrue(mainPage.isMainPage());
     }
     @Test
@@ -56,7 +56,7 @@ public class LoginTests extends BaseTest{
         MainPage mainPage = loginPage.loginToApp(username,password);
         Assert.assertTrue(mainPage.isMainPage());
     }
-    @Test
+    @Test(enabled = false)
     public void loginTest_loginWithIncorrectCredentials_errorFrame3(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open(url);
