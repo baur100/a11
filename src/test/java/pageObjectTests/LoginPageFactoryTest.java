@@ -17,7 +17,7 @@ public class LoginPageFactoryTest extends BaseTest{
     public void loginTest_loginWithIncorrectCredentials_errorFrame(){
         LoginPageFactory loginPage = new LoginPageFactory(driver);
         loginPage.open(url);
-        loginPage.loginToApp(username,password);
+        loginPage.loginToApp(username,"WrongPassword");
         Assert.assertTrue(loginPage.isErrorFrame());
     }
     @Test
@@ -31,7 +31,7 @@ public class LoginPageFactoryTest extends BaseTest{
     public void loginTest_loginWithIncorrectCredentials_errorFrame1(){
         LoginPageFactory loginPage = new LoginPageFactory(driver);
         loginPage.open(url);
-        loginPage.loginToApp(username,password);
+        loginPage.loginToApp(username,"WrongPassword");
         Assert.assertTrue(loginPage.isErrorFrame());
     }
     @Test
@@ -45,7 +45,7 @@ public class LoginPageFactoryTest extends BaseTest{
     public void loginTest_loginWithIncorrectCredentials_errorFrame2(){
         LoginPageFactory loginPage = new LoginPageFactory(driver);
         loginPage.open(url);
-        loginPage.loginToApp(username,password);
+        loginPage.loginToApp(username,"WrongPassword");
         Assert.assertTrue(loginPage.isErrorFrame());
     }
     @Test
@@ -59,7 +59,7 @@ public class LoginPageFactoryTest extends BaseTest{
     public void loginTest_loginWithIncorrectCredentials_errorFrame3(){
         LoginPageFactory loginPage = new LoginPageFactory(driver);
         loginPage.open(url);
-        loginPage.loginToApp(username,password);
+        loginPage.loginToApp(username,"WrongPassword");
         Assert.assertTrue(loginPage.isErrorFrame());
     }
 }

@@ -20,7 +20,7 @@ public class MainPage extends BasePage{
         return driver.findElement(By.xpath("//*[@href='#!/playlist/"+playlistId+"']"));
     }
     private WebElement getPlaylistEditField(){
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("[@type='text']")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("[@type='text']")));
         return driver.findElement(By.xpath("//*[@type='text']"));
     }
 
