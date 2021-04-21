@@ -1,4 +1,4 @@
-package simpleExamplePassingParametersToObjects040221;
+package simpleExamplePassingParametersToObjects042021;
 
 public class simpleObjectsForPassingParameters040221 {
 
@@ -6,7 +6,7 @@ public class simpleObjectsForPassingParameters040221 {
     private String passWord;
     private Boolean testResult;
 
-    public simpleObjectsForPassingParameters040221 (String userName, String passWord) {
+    public simpleObjectsForPassingParameters040221(String userName, String passWord) {
         this.userName = userName;
         this.passWord = passWord;
         testResult = true;
