@@ -3,16 +3,12 @@ package pages;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
 
-public class MainPage {
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class MainPage extends BasePage{
 
     public MainPage(WebDriver driver) {
-        this.driver = driver;
-        wait = new WebDriverWait(driver, 10, 200);
+        super(driver);
     }
 
     private WebElement getHomeButton(){
@@ -96,5 +92,6 @@ public class MainPage {
         getPlaylistEditField().sendKeys(Keys.CONTROL + "A");
         getPlaylistEditField().sendKeys(newName);
         getPlaylistEditField().sendKeys(Keys.ENTER);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@href='#!/playlist/"+ playlistId +"']")));
     }
 }

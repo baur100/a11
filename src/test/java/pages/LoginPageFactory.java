@@ -7,11 +7,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class LoginPageFactory {
-    private WebDriver driver;
+public class LoginPageFactory extends BasePage{
 
     public LoginPageFactory(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 10);
         PageFactory.initElements(factory, this);
     }

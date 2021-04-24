@@ -8,13 +8,10 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class MainPageFactory {
-    private WebDriver driver;
-    private WebDriverWait wait;
-    //String playlistId = mainPage.createPlaylist(playlistName);
+public class MainPageFactory extends BasePage{
 
     public MainPageFactory(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 10);
         PageFactory.initElements(factory, this);
     }
