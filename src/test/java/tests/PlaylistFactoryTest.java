@@ -10,10 +10,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 //import org.openqa.selenium.JavascriptExecutor;
-import pages.LoginPage;
-import pages.MainPage;
+import pages.LoginPageFactory;
+import pages.MainPageFactory;
 
-public class PlayListTests {
+public class PlaylistFactoryTest {
     private WebDriver driver;
 
     @BeforeMethod
@@ -33,9 +33,9 @@ public class PlayListTests {
 //        String playlistName = TestDataGenerator1.getRandomString(7);
         Faker faker = new Faker();
         String playlistName = faker.funnyName().name();
-        LoginPage loginpage = new LoginPage(driver);
+        LoginPageFactory loginpage = new LoginPageFactory(driver);
         loginpage.open();
-        MainPage mainPage = loginpage.loginToApp("testerjo168@gmail.com", "te$t$tudent");
+        MainPageFactory mainPage = loginpage.loginToApp("testerjo168@gmail.com", "te$t$tudent");
         String playlistId = mainPage.createPlaylist(playlistName);
 
         Assert.assertTrue(mainPage.isPlaylistExist(playlistId, playlistName));
@@ -46,9 +46,9 @@ public class PlayListTests {
         Faker faker = new Faker();
         String playlistName = faker.funnyName().name();
 
-        LoginPage loginpage = new LoginPage(driver);
+        LoginPageFactory loginpage = new LoginPageFactory(driver);
         loginpage.open();
-        MainPage mainPage = loginpage.loginToApp("testerjo168@gmail.com", "te$t$tudent");
+        MainPageFactory mainPage = loginpage.loginToApp("testerjo168@gmail.com", "te$t$tudent");
         String playlistId = mainPage.createPlaylist(playlistName);
 
         String newName = faker.ancient().hero();

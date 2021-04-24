@@ -4,7 +4,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-//import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class MainPage {
     private WebDriver driver;
@@ -94,7 +94,6 @@ public class MainPage {
         Actions actions = new Actions(driver);
         actions.doubleClick(playlist).perform();
         getPlaylistEditField().sendKeys(Keys.CONTROL + "A");
-//        getPlaylistEditField().sendKeys(Keys.BACK_SPACE);
         getPlaylistEditField().sendKeys(newName);
         getPlaylistEditField().sendKeys(Keys.ENTER);
     }
