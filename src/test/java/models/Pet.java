@@ -10,8 +10,20 @@ public class Pet {
     private Category category;
     private Tag[] tags;
 
+    public Pet(Status status, String name, String[] photoUrls, Category category, Tag[] tags) {
+        this.status = status;
+        this.name = name;
+        this.photoUrls = photoUrls;
+        this.category = category;
+        this.tags = tags;
+    }
+
     public Status getStatus() {
         return status;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public long getId() {
