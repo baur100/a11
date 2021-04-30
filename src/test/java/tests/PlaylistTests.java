@@ -1,10 +1,13 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import helpers.TestDataGenerator1;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.MainPage;
+
+import java.util.Random;
 
 public class PlaylistTests extends BaseTest{
     @Test
@@ -18,6 +21,20 @@ public class PlaylistTests extends BaseTest{
         String playlistId = mainPage.createPlaylist(playlistName);
 
         Assert.assertTrue(mainPage.isPlaylistExist(playlistId, playlistName));
+    }
+
+    @Test
+    public void playlistTest_createSmartPlaylist_playlistCreate(){
+        Faker faker = new Faker();
+
+        String smartPlaylistName = faker.funnyName().name();
+        int songLengthGreaterThan = TestDataGenerator1.getRandomNumber();
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.open();
+        MainPage mainPage = loginPage.loginToApp(username, password);
+        String playlistId = mainPage.createSmartPlaylist(smartPlaylistName, songLengthGreaterThan);
+
+        Assert.assertTrue(mainPage.isPlaylistExist(playlistId, smartPlaylistName));
     }
 
     @Test
@@ -35,4 +52,6 @@ public class PlaylistTests extends BaseTest{
 
         Assert.assertTrue(mainPage.isPlaylistExist(playlistId, newName));
     }
+
+
 }

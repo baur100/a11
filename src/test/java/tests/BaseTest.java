@@ -16,7 +16,6 @@ public class BaseTest {
         driver = BrowserFabric1.getDriver(BrowserType.CHROME);
         username = "testerjo168@gmail.com";
         password = "te$t$tudent";
-
     }
 
     @AfterMethod
