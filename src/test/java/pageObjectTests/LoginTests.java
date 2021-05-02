@@ -27,14 +27,14 @@ public class LoginTests {
     @Test
     public void loginTest_loginWithCorrectCredentials_mainPageOpened(){
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.open();
+        loginPage.open("https://bbb.testpro.io");
         MainPage mainPage = loginPage.loginToApp("koeluser06@testpro.io","te$t$tudent");
         Assert.assertTrue(mainPage.isMainPage());
     }
     @Test
     public void loginTest_loginWithIncorrectCredentials_errorFrame(){
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.open();
+        loginPage.open("https://bbb.testpro.io");
         loginPage.loginToApp("koeluser06@testpro.io","wrongPassword");
         Assert.assertTrue(loginPage.isErrorFrame());
 

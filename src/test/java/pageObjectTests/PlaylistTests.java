@@ -32,7 +32,7 @@ public class PlaylistTests {
         String playlistName = faker.funnyName().name();
 
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.open();
+        loginPage.open("https://bbb.testpro.io");
         MainPage mainPage = loginPage.loginToApp("koeluser06@testpro.io","te$t$tudent");
         String playlistId = mainPage.createPlaylist(playlistName);
 
@@ -44,7 +44,7 @@ public class PlaylistTests {
         String playlistName = faker.funnyName().name();
 
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.open();
+        loginPage.open("https://bbb.testpro.io");
         MainPage mainPage = loginPage.loginToApp("koeluser06@testpro.io","te$t$tudent");
         String playlistId = mainPage.createPlaylist(playlistName);
 

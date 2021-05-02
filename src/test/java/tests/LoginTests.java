@@ -12,7 +12,7 @@ public class LoginTests extends BaseTest{
     @Test
     public void loginTest_LoginWithCorrectCredetials_mainPageOpened(){
         LoginPage loginpage = new LoginPage(driver);
-        loginpage.open();
+        loginpage.open(url);
         MainPage mainPage = loginpage.loginToApp(username, password);
         Assert.assertTrue(mainPage.isMainPage());
     }
@@ -20,7 +20,7 @@ public class LoginTests extends BaseTest{
     @Test
     public void loginTest_loginWithIncorrectCredentials_errorFrame(){
         LoginPage loginpage = new LoginPage(driver);
-        loginpage.open();
+        loginpage.open(url);
         loginpage.loginToApp(username, "WrongPW");
         Assert.assertTrue(loginpage.isErrorFrame());
     }

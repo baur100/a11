@@ -6,19 +6,19 @@ import org.testng.annotations.Test;
 import pages.LoginPageFactory;
 import pages.MainPageFactory;
 
-public class LoginPageFactoryTest extends BaseTest{
+public class LoginPageFactoryTests extends BaseTest{
     @Test
-    public void loginTest_LoginWithCorrectCredetials_mainPageOpened(){
+    public void loginPageFactoryTest_LoginWithCorrectCredetials_mainPageOpened(){
         LoginPageFactory loginpage = new pages.LoginPageFactory(driver);
-        loginpage.open();
+        loginpage.open(url);
         MainPageFactory mainPage = loginpage.loginToApp(username, password);
         Assert.assertTrue(mainPage.isMainPage());
     }
 
     @Test
-    public void loginTest_loginWithIncorrectCredentials_errorFrame(){
+    public void loginPageFactoryTest_loginWithIncorrectCredentials_errorFrame(){
         LoginPageFactory loginpage = new LoginPageFactory(driver);
-        loginpage.open();
+        loginpage.open(url);
         loginpage.loginToApp(username, "wrongPW");
         Assert.assertTrue(loginpage.isErrorFrame());
     }

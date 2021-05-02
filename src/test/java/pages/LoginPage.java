@@ -38,8 +38,8 @@ public class LoginPage extends BasePage {
         return new MainPage(driver);
     }
 
-    public void open() {
-        driver.get("http://bbb.testpro.io");
+    public void open(String url) {
+        driver.get(url);
     }
 
     public boolean isErrorFrame() {

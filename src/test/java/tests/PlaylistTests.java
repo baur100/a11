@@ -7,8 +7,6 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.MainPage;
 
-import java.util.Random;
-
 public class PlaylistTests extends BaseTest{
     @Test
     public void playlistTest_createPlaylist_playlistCreated(){
@@ -16,7 +14,7 @@ public class PlaylistTests extends BaseTest{
         Faker faker = new Faker();
         String playlistName = faker.funnyName().name();
         LoginPage loginpage = new LoginPage(driver);
-        loginpage.open();
+        loginpage.open(url);
         MainPage mainPage = loginpage.loginToApp(username, password);
         String playlistId = mainPage.createPlaylist(playlistName);
 
@@ -30,7 +28,7 @@ public class PlaylistTests extends BaseTest{
         String smartPlaylistName = faker.funnyName().name();
         int songLengthGreaterThan = TestDataGenerator1.getRandomNumber();
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.open();
+        loginPage.open(url);
         MainPage mainPage = loginPage.loginToApp(username, password);
         String playlistId = mainPage.createSmartPlaylist(smartPlaylistName, songLengthGreaterThan);
 
@@ -43,7 +41,7 @@ public class PlaylistTests extends BaseTest{
         String playlistName = faker.funnyName().name();
 
         LoginPage loginpage = new LoginPage(driver);
-        loginpage.open();
+        loginpage.open(url);
         MainPage mainPage = loginpage.loginToApp(username, password);
         String playlistId = mainPage.createPlaylist(playlistName);
 
@@ -52,6 +50,4 @@ public class PlaylistTests extends BaseTest{
 
         Assert.assertTrue(mainPage.isPlaylistExist(playlistId, newName));
     }
-
-
 }

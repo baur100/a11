@@ -4,11 +4,15 @@ import enums.BrowserType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.opera.OperaOptions;
 
-public class BrowserFabric1 {
+public class BrowserFabric {
     public static WebDriver getDriver(BrowserType browserType){
         switch (browserType) {
             case FIREFOX -> {
@@ -27,8 +31,11 @@ public class BrowserFabric1 {
     }
 
     private static WebDriver getChromeDriver() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("start-maximized");
+//        options.addArguments("--headless");
         WebDriverManager.chromedriver().setup();
-        return new ChromeDriver();
+        return new ChromeDriver(options);
     }
 
     private static WebDriver getEdgeDriver() {
@@ -42,7 +49,9 @@ public class BrowserFabric1 {
     }
 
     private static WebDriver getFirefoxDriver() {
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
         WebDriverManager.firefoxdriver().setup();
-        return new FirefoxDriver();
+        return new FirefoxDriver(options);
     }
 }
