@@ -1,6 +1,6 @@
 package enums;
 
-public enum BrowserType {
+public enum BrowserType1 {
     CHROME,
     FIREFOX,
     OPERA,

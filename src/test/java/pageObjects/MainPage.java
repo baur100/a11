@@ -1,16 +1,15 @@
 package pageObjects;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class MainPage {
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class MainPage extends BasePage{
+    private static Logger logger = LogManager.getLogger(MainPage.class);
     public MainPage(WebDriver driver) {
-        this.driver = driver;
-        wait = new WebDriverWait(driver,10,200);
+        super(driver);
     }
     private WebElement getHomeButton(){
         By homeBy = By.className("logout");
@@ -21,7 +20,8 @@ public class MainPage {
         return driver.findElement(By.xpath("//*[@href='#!/playlist/"+playlistId+"']"));
     }
     private WebElement getPlaylistEditField(){
-        return driver.findElement(By.xpath("//*[@class='playlist playlist editing']/input"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("[@type='text']")));
+        return driver.findElement(By.xpath("//*[@type='text']"));
     }
 
     public boolean isMainPage() {
@@ -32,17 +32,25 @@ public class MainPage {
         }
     }
     private WebElement getNewPlaylistField(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='create']/input")));
         return driver.findElement(By.xpath("//*[@class='create']/input"));
     }
     private void clickPlusButton() {
+        logger.trace("I'm in click plusButton method");
         By plusButtonBy = By.cssSelector(".fa-plus-circle");
+        logger.info("By -> Created By css selector .fa-plus-circle");
         wait.until(ExpectedConditions.elementToBeClickable(plusButtonBy));
+        logger.debug("waited until element become clickable");
         for (int i=0;i<5;i++){
             try{
+                logger.warn("in the try block");
+                Actions actions = new Actions(driver);
+                actions.click(driver.findElement(plusButtonBy)).build().perform();
                 driver.findElement(plusButtonBy).click();
+                driver.findElement(By.xpath("//*[text()='New Playlist']")).click();
                 return;
             } catch (ElementClickInterceptedException ignored){
-
+                logger.error("In the catch block");
             }
         }
     }
@@ -68,7 +76,8 @@ public class MainPage {
         WebElement playlist = getPlaylistById(playlistId);
         js.executeScript("arguments[0].scrollIntoView();", playlist);
         Actions actions = new Actions(driver);
-        actions.doubleClick(playlist).perform();
+        actions.doubleClick(playlist).build().perform();
+//        actions.doubleClick(playlist).build().perform();
         getPlaylistEditField().sendKeys(Keys.CONTROL+"a");
         getPlaylistEditField().sendKeys(newName);
         getPlaylistEditField().sendKeys(Keys.ENTER);
