@@ -1,11 +1,14 @@
 package pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.JavascriptExecutor;
 
 public class MainPage extends BasePage{
+    private static Logger logger = LogManager.getLogger(MainPage.class);
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -18,14 +21,21 @@ public class MainPage extends BasePage{
     }
 
     private void clickPlusButton(){
+        logger.debug("I'm at click plusButton method");
+
         By plusButtonBy = By.cssSelector(".fa-plus-circle");
+
+        logger.info("By -> Created by css selector .fa-plus-circle");
         wait.until(ExpectedConditions.elementToBeClickable(plusButtonBy));
+
+        logger.info("Wait until element become clickable");
         for (int i = 0; i < 5 ; i++){
             try {
+                logger.warn("In the try block");
                 driver.findElement(plusButtonBy).click();
                 return;
             } catch (ElementClickInterceptedException ignored){
-
+                logger.error("In the catch block");
             }
         }
     }

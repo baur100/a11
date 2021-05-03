@@ -5,12 +5,11 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.MainPage;
 
-import java.time.Duration;
 
 public class LoginTests extends BaseTest{
 
     @Test
-    public void loginTest_LoginWithCorrectCredetials_mainPageOpened(){
+    public void loginTest_LoginWithCorrectCredentials_mainPageOpened(){
         LoginPage loginpage = new LoginPage(driver);
         loginpage.open(url);
         MainPage mainPage = loginpage.loginToApp(username, password);
