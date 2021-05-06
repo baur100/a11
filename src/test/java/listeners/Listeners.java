@@ -11,7 +11,7 @@ public class Listeners implements ITestListener {
     @Override
     public void onTestStart(ITestResult iTestResult) {
         logger.debug("+++Test "+iTestResult.getName() + " started+++");
-        System.out.println("Blah-blah");
+//        System.out.println("Blah-blah");
 
     }
 
