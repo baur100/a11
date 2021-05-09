@@ -12,7 +12,7 @@
         <classes>
             <class name="tests.PlaylistTests">
                 <methods>
-                    <include name="playlistTest_createPlaylist_playlistCreated"/>
+                    <include name="playlistTest_createSmartPlaylist_playlistCreate"/>
                 </methods>
             </class>
         </classes>
