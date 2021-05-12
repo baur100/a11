@@ -1,10 +1,15 @@
 package pageObjects;
 
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.List;
+import java.util.Random;
+
 
 public class MainPage extends BasePage{
     private static Logger logger = LogManager.getLogger(MainPage.class);
@@ -85,5 +90,54 @@ public class MainPage extends BasePage{
         getPlaylistEditField().sendKeys(newName);
         getPlaylistEditField().sendKeys(Keys.RETURN);
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='success show']")));
+    }
+    private WebElement getAllSongsList(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='songs']")));
+        return driver.findElement(By.xpath("//*[@class='songs']"));
+    }
+
+    private WebElement selectedSong(){
+        List<WebElement> songList = driver.findElements(By.xpath("//table/tr/td[@class='title']"));
+            Random rand = new Random();
+            int randomNumber = rand.nextInt(songList.size());
+            WebElement randomSong =songList.get(randomNumber);
+        System.out.println(randomSong.getText());
+      return randomSong;
+    }
+
+    private WebElement addTo(){
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='has-sub']")));
+        return driver.findElement(By.xpath("//*[@class='has-sub']"));
+    }
+    private WebElement getSongInsidePlaylist(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='playlistWrapper']/div/div/div/table/tr")));
+        return driver.findElement(By.xpath("//*[@id='playlistWrapper']/div/div/div/table/tr"));
+    }
+
+    public boolean isSongExistInPlaylist() {
+        try{
+            return getSongInsidePlaylist().isDisplayed();
+        } catch (TimeoutException err){
+            return false;
+        }
+    }
+
+
+    public void addSongToPlaylist(String playlistId,String playlistName){
+        getAllSongsList().click();
+        selectedSong();
+        WebElement randomSong = selectedSong();
+        System.out.println(randomSong.getText());
+        Actions actions = new Actions(driver);
+        actions.contextClick(randomSong).build().perform();
+        addTo().click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='playlist' and text()='" + playlistName + "']")));
+        WebElement playlist = driver.findElement(By.xpath("//*[@class='playlist' and text()='" + playlistName + "']"));
+        actions.click(playlist).build().perform();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='success show']")));
+        WebElement createdPlaylist = getPlaylistById(playlistId);
+        JavascriptExecutor je = (JavascriptExecutor) driver;
+        je.executeScript("arguments[0].scrollIntoView();",createdPlaylist);
+        actions.click(createdPlaylist).perform();
     }
 }
