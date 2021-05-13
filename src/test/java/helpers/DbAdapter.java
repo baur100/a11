@@ -1,9 +1,7 @@
 package helpers;
-
-
-
 import models.Album;
 import models.Artist;
+import models.Playlist;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -56,5 +54,30 @@ public class DbAdapter {
         } catch (SQLException err){}
 
         return albums;
+    }
+    public static Playlist getPlaylistById(int playlistId){
+        String query = "SELECT * FROM playlists p WHERE user_id = 170 and id = "+playlistId;
+        Playlist playlist = null;
+        try{
+            Class.forName(JDBC_DRIVER);
+            connection = DriverManager.getConnection(DB_URL,USER,PASSWORD);
+            statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()){
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                playlist = new Playlist(id,name);
+            }
+
+        } catch (SQLException | ClassNotFoundException err){}
+        finally {
+            if(connection!=null){
+                try{
+                    connection.close();
+                } catch (SQLException ignored){}
+            }
+        }
+
+        return playlist;
     }
 }
