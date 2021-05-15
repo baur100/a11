@@ -79,7 +79,7 @@ public class MainPage extends BasePage{
     }
 
     public void renamePlaylist(String playlistId, String newName) {
-        wait.until(ExpectedConditions.visibilityOf(getHomeButton()));
+//        wait.until(ExpectedConditions.visibilityOf(getHomeButton()));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebElement playlist = getPlaylistById(playlistId);
         js.executeScript("arguments[0].scrollIntoView();", playlist);
