@@ -11,9 +11,9 @@
     <parameter name="browser" value="chrome"/>
     <test name="All tests">
         <classes>
-            <class name="pageObjectTests.PlaylistTest">
+            <class name="pageObjectTests.HybridTestAll">
                 <methods>
-                    <include name="playlistTest_renamePlaylist_playlistRenamed"/>
+                    <include name="renamePlaylist_playlistRenamed"/>
                 </methods>
             </class>
         </classes>

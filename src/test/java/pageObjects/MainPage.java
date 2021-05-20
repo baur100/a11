@@ -22,6 +22,7 @@ public class MainPage extends BasePage{
         return driver.findElement(homeBy);
     }
     private WebElement getPlaylistById(String playlistId){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@href='#!/playlist/"+playlistId+"']")));
         return driver.findElement(By.xpath("//*[@href='#!/playlist/"+playlistId+"']"));
     }
     private WebElement getPlaylistEditField(){
