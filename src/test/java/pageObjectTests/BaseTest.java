@@ -23,9 +23,11 @@ public class BaseTest {
         this.username = username;
         this.password = password;
         this.url = url;
+        System.out.println("In Base BEFORE METHOD");
     }
     @AfterMethod
     public void tearDown(ITestResult iTestResult) throws InterruptedException {
+        System.out.println("In Base AFTER METHOD");
         if(iTestResult.getStatus()==iTestResult.FAILURE){
             ScreenShot.get(driver, iTestResult.getName());
         }

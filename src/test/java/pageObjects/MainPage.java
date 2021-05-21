@@ -17,10 +17,11 @@ public class MainPage extends BasePage{
         return driver.findElement(homeBy);
     }
     private WebElement getPlaylistById(String playlistId){
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@href='#!/playlist/"+playlistId+"']")));
         return driver.findElement(By.xpath("//*[@href='#!/playlist/"+playlistId+"']"));
     }
-    private WebElement getPlaylistEditField(){
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("[@type='text']")));
+    private WebElement getPlaylistEditField(String playlistId){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@href='#!/playlist/"+playlistId+"']/following-sibling::input")));
         return driver.findElement(By.xpath("//*[@type='text']"));
     }
 
@@ -78,8 +79,13 @@ public class MainPage extends BasePage{
         Actions actions = new Actions(driver);
         actions.doubleClick(playlist).build().perform();
 //        actions.doubleClick(playlist).build().perform();
-        getPlaylistEditField().sendKeys(Keys.CONTROL+"a");
-        getPlaylistEditField().sendKeys(newName);
-        getPlaylistEditField().sendKeys(Keys.ENTER);
+        getPlaylistEditField(playlistId).sendKeys(Keys.CONTROL+"a");
+        getPlaylistEditField(playlistId).sendKeys(newName);
+        getPlaylistEditField(playlistId).sendKeys(Keys.ENTER);
     }
 }
+
+//
+//    JavascriptExecutor executor = (JavascriptExecutor) driver;
+//executor.executeScript("arguments[0].scrollIntoView(true);", element);
+//        element.click();
