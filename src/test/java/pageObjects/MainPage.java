@@ -52,7 +52,7 @@ public class MainPage extends BasePage{
                 logger.warn("in the try block");
                 Actions actions = new Actions(driver);
                 actions.click(driver.findElement(plusButtonBy)).build().perform();
-                driver.findElement(plusButtonBy).click();
+//                driver.findElement(plusButtonBy).click();
                 driver.findElement(By.xpath("//*[text()='New Playlist']")).click();
                 return;
             } catch (ElementClickInterceptedException ignored){

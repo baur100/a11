@@ -36,7 +36,7 @@ public class PlaylistTestFactory extends BaseTest{
         mainPageFactory.renamePlaylist(playlistId,newName);
         Assert.assertTrue(mainPageFactory.isPlaylistExist(playlistId,newName));
     }
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void playlistTestFactory_createPlaylist1(){
         String playlistName = faker.funnyName().name();
         System.out.println(playlistName);
@@ -76,7 +76,7 @@ public class PlaylistTestFactory extends BaseTest{
         System.out.println(playlistId);
         Assert.assertTrue(mainPageFactory.isPlaylistExist(playlistId,playlistName));
     }
-    @Test(retryAnalyzer = RetryAnalyzer.class)
+    @Test
     public void playlistTestFactory_renamePlaylist_playlistRenamed2(){
         String playlistName = faker.funnyName().name();
         System.out.println(playlistName);
@@ -92,7 +92,7 @@ public class PlaylistTestFactory extends BaseTest{
         mainPageFactory.renamePlaylist(playlistId,newName);
         Assert.assertTrue(mainPageFactory.isPlaylistExist(playlistId,newName));
     }
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void playlistTestFactory_createPlaylist3(){
         String playlistName = faker.funnyName().name();
         System.out.println(playlistName);

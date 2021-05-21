@@ -58,7 +58,7 @@ public class PlaylistTest extends BaseTest {
         logger.info("Assert passed");
     }
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void playlistTest_createPlaylist1() {
         String playlistName = faker.funnyName().name();
 //        System.out.println(playlistName);
@@ -71,7 +71,7 @@ public class PlaylistTest extends BaseTest {
         Assert.assertTrue(mainPage.isPlaylistExist(playlistId, playlistName));
     }
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void playlistTest_renamePlaylist_playlistRenamed1() {
         String playlistName = faker.funnyName().name();
 //        System.out.println(playlistName);

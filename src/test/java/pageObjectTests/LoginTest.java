@@ -1,5 +1,6 @@
 package pageObjectTests;
 
+import listeners.RetryAnalyzer;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.MainPage;
@@ -35,14 +36,14 @@ public class LoginTest extends BaseTest{
         loginPage.LoginToApplication(username,"WrongPassword");
         Assert.assertTrue(loginPage.isError());
     }
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void loginTest_LoginToAppUsingCorrectCredentials2(){
         MyLoginPage loginPage= new MyLoginPage(driver);
         loginPage.open(url);
         MainPage mainPage = loginPage.LoginToApplication(username,password);
         Assert.assertTrue(mainPage.isMainPage());
     }
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void loginTest_LoginToAppUsingIncorrectCredentials2(){
         MyLoginPage loginPage = new MyLoginPage(driver);
         loginPage.open(url);
