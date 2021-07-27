@@ -17,15 +17,15 @@ public class DbTest {
     }
     @Test
     public void getPlaylistById(){
-        Playlist pl = DbAdapter.getPlaylistById(3079);
+        Playlist pl = DbAdapter.getPlaylistById(972);
         System.out.println(pl.getName());
     }
 
     @Test
     public void getPlaylistSongs(){
-        List<PlaylistSongs> songs = DbAdapter.getPlaylistSongs(3079);
+        List<PlaylistSongs> songs = DbAdapter.getPlaylistSongs(972);
         for(PlaylistSongs song:songs){
-            System.out.println(song.getTrack()+" "+song.getTitle()+" "+song.getArtist()+" "+song.getAlbum());
+            System.out.println(song.getTrack()+" - "+song.getTitle()+" - "+song.getArtist()+" - "+song.getAlbum());
         }
     }
 }

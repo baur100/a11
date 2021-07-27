@@ -14,11 +14,11 @@ public class Work1 {
 
         int[] array = {3, 9, 1, 8, 4, 8, 5};
         Arrays.sort(array);
-        int i = 0;
-        for (int v : array) {
-            System.out.println(array[i]);
-            i++;
-        }
+//        int i = 0;
+//        for (int v : array) {
+            System.out.println(Arrays.toString(array));
+//            i++;
+//        }
 
     }
 
@@ -44,7 +44,27 @@ public class Work1 {
         return m;
     }
 
-    public static void sort(int[] array) {
-
-    }
+//    public static void sort(int[] array){
+//        int[] sortedArray = new int[array.length];
+//        boolean notSorted = true;
+//        int x =0;
+//        int first = minimum(array);
+//         sortedArray[0]=first;
+//         while (notSorted){
+//             for (int a:array){
+//                 if(a==first){
+//                     sortedArray[x]=a;
+//                     x++;
+//                 }
+//             }
+//             first++;
+//             if (sortedArray[x-1] == maximum(array)){
+//                 notSorted = false;
+//             }
+//         }
+//        System.out.println(Arrays.toString(sortedArray));
+//         for (int a:sortedArray){
+//             System.out.println(a);
+//         }
+//    }
 }

@@ -14,8 +14,11 @@ public class App {
 
         Shape[] shapes= {circle,circle1,rectangle,rectangle1,square,square1,square2};
 
+//        for (Shape shape:shapes){
+//            shape.draw();
+//        }
         for (Shape shape:shapes){
-            shape.draw();
+            System.out.println(shape.getArea());
         }
 
 //        Person person = new Person(); abstract class can not be instanciated

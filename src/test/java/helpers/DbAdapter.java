@@ -71,7 +71,7 @@ public class DbAdapter {
 
     public static List<PlaylistSongs> getPlaylistSongs(int playlistId)  {
         List<PlaylistSongs> songs = new ArrayList<>();
-        String query = "SELECT s.track AS track, s.title AS title, a.name AS artist, a.name AS album FROM ((((dbkoel.playlists p INNER JOIN dbkoel.playlist_song ps ON p.id=ps.playlist_id) INNER JOIN dbkoel.songs s ON s.id=ps.song_id) INNER JOIN dbkoel.artists a ON s.artist_id =a.id) INNER JOIN dbkoel.albums a2 ON s.album_id =a2.id) WHERE p.id ="+playlistId;
+        String query = "SELECT s.track AS track, s.title AS title, a.name AS artist, a2.name AS album FROM ((((dbkoel.playlists p INNER JOIN dbkoel.playlist_song ps ON p.id=ps.playlist_id) INNER JOIN dbkoel.songs s ON s.id=ps.song_id) INNER JOIN dbkoel.artists a ON s.artist_id =a.id) INNER JOIN dbkoel.albums a2 ON s.album_id =a2.id) WHERE p.id ="+playlistId;
         try {
             connection = DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);
             statement = connection.createStatement();

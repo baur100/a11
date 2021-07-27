@@ -24,15 +24,17 @@ public class Koellogin {
     @BeforeMethod
     public void startUp() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
+//        WebDriverManager.firefoxdriver().setup();
         driver = new ChromeDriver();
+//        driver = new FirefoxDriver();
 //        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver,10,200);
         fluentWait = new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofMillis(200))
                 .ignoring(NoSuchElementException.class);
-        driver.get("https://koelapp.testpro.io/");
-
+//        driver.get("https://koelapp.testpro.io/");
+        driver.get("https://bbb.testpro.io/");
     }
     @AfterMethod
     public void tearDown() throws InterruptedException {
