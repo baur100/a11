@@ -1,7 +1,6 @@
 package helpers;
 
 import com.github.javafaker.Faker;
-import enums.Status;
 import enums.Status1;
 import models.Category1;
 import models.Pet1;
