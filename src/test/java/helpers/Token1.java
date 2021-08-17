@@ -2,10 +2,7 @@ package helpers;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import models.Credentials;
 import models.Credentials1;
-import models.Pet1;
-import org.testng.Assert;
 
 import static io.restassured.RestAssured.given;
 
