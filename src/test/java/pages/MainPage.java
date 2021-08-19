@@ -62,6 +62,12 @@ public class MainPage extends BasePage{
         wait.until(ExpectedConditions.visibilityOfElementLocated(newSmartPlaylistTextboxBy));
         return driver.findElement(newSmartPlaylistTextboxBy);
     }
+//    This is to click right-click to get to Edit button
+    private WebElement getPlaylistEditButton(String playlistId){
+        By getPlaylistEditButtonBy = (By.xpath("//*[@href='#!/playlist/" + playlistId + "']//following-sibling::nav//child::ul//child::li"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(getPlaylistEditButtonBy));
+        return driver.findElement(getPlaylistEditButtonBy);
+    }
 
     private WebElement getGroupButton(){
         By groupButtonBy = By.xpath("//*[text()=' GROUP']");
@@ -115,13 +121,13 @@ public class MainPage extends BasePage{
     }
 
     private WebElement getPlaylistById(String playlistId){
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@href='#!/playlist/"+ playlistId +"']")));
         return driver.findElement(By.xpath("//*[@href='#!/playlist/"+ playlistId +"']"));
     }
 
     private WebElement getPlaylistEditField(){
-        By playlistEditFieldBy = By.xpath("//*[@class='playlist playlist editing']/input");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(playlistEditFieldBy));
-        return driver.findElement(playlistEditFieldBy);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='playlist playlist editing']/input")));
+        return driver.findElement(By.xpath("//*[@class='playlist playlist editing']/input"));
     }
 
     public boolean isMainPage() {
@@ -172,7 +178,9 @@ public class MainPage extends BasePage{
         WebElement playlist = getPlaylistById(playlistId);
         js.executeScript("arguments[0].scrollIntoView();", playlist);
         Actions actions = new Actions(driver);
-        actions.doubleClick(playlist).perform();
+        actions.contextClick(playlist).perform();
+        getPlaylistEditButton(playlistId).click();
+//        actions.doubleClick(playlist).perform();
         getPlaylistEditField().sendKeys(Keys.CONTROL + "A");
         getPlaylistEditField().sendKeys(newName);
         getPlaylistEditField().sendKeys(Keys.ENTER);
