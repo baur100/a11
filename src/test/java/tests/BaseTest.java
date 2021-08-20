@@ -20,7 +20,7 @@ public class BaseTest {
     @BeforeMethod
     public void startUp(String url, String username, String password, String browser){
         BrowserType1 type = browser.equals("chrome") ? BrowserType1.CHROME : BrowserType1.FIREFOX;
-        driver = BrowserFabric1.getDriver(BrowserType1.FIREFOX);
+        driver = BrowserFabric1.getDriver(BrowserType1.CHROME);
         driver.manage().window().maximize();
         this.username = username;
         this.password = password;
