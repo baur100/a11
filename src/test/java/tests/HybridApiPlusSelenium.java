@@ -5,6 +5,9 @@ import helpers.Token1;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import models.CreatePlaylistRequest1;
+import models.Playlist;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.LoginPage;
@@ -22,7 +25,7 @@ public class HybridApiPlusSelenium extends BaseTest {
         faker = new Faker();
         token = Token1.getToken();
         playlistName = faker.funnyName().name();
-        System.out.println("Before Method: Playlist name " + playlistName + " created.");
+        System.out.println("Playlist name: " + playlistName + " created.");
         CreatePlaylistRequest1 playlistRequest = new CreatePlaylistRequest1(playlistName);
         Response response =  given()
                 .baseUri("https://bbb.testpro.io/")
@@ -40,13 +43,25 @@ public class HybridApiPlusSelenium extends BaseTest {
         JsonPath jsonPath = response.jsonPath();
         playlistId = jsonPath.getInt("id");
     }
+    @AfterMethod
+    public void cleanUp(){
+        given()
+                .baseUri("https://bbb.testpro.io/")
+                .basePath("api/playlist/"+playlistId)
+                .header("Accept", "application/json")
+                .header("Content-type", "application/json")
+                .header("Authorization", token)
+                .when()
+                .delete();
+    }
     @Test
     public void renamePlaylist_playlistRenamed(){
         String newName = faker.dragonBall().character();
-        System.out.println(newName);
+        System.out.println("Playlist renamed to: " + newName);
         LoginPage loginpage = new LoginPage(driver);
         loginpage.open(url);
         MainPage mainPage = loginpage.loginToApp(username, password);
         mainPage.renamePlaylist(playlistId+"", newName); //Adding empty string would convert it into string
+        Assert.assertTrue(mainPage.isPlaylistExist(playlistId+"",newName));
     }
 }
