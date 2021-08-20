@@ -31,7 +31,7 @@ public class BrowserFabric1 {
     private static WebDriver getChromeDriver() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver(options);
     }
