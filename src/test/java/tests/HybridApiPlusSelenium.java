@@ -5,7 +5,6 @@ import helpers.Token1;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import models.CreatePlaylistRequest1;
-import models.Playlist;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
