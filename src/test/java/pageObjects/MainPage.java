@@ -141,4 +141,27 @@ public class MainPage extends BasePage{
         je.executeScript("arguments[0].scrollIntoView();",createdPlaylist);
         actions.click(createdPlaylist).perform();
     }
+
+    private WebElement getDeletePlaylistButton(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@title='Delete this playlist']")));
+        return driver.findElement(By.xpath("//*[@title='Delete this playlist']"));
+    }
+
+    public void deletePlaylist(String playlistId) {
+        Actions actions = new Actions(driver);
+        WebElement createdPlaylist = getPlaylistById(playlistId);
+        JavascriptExecutor je = (JavascriptExecutor) driver;
+        je.executeScript("arguments[0].scrollIntoView();",createdPlaylist);
+        actions.click(createdPlaylist).perform();
+        getDeletePlaylistButton().click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='success show']")));
+    }
+
+    public boolean playlistDeleted(String playlistId, String playlistName) {
+        try{
+            return getPlaylistById(playlistId).isEnabled();
+        } catch (NoSuchElementException ignored){
+            return false;
+        }
+    }
 }

@@ -150,4 +150,18 @@ public class PlaylistTest extends BaseTest {
 
         Assert.assertTrue(mainPage.isPlaylistExist(playlistId, newName));
     }
+
+    @Test
+    public void playlistTest_deletePlaylist_playlistDeleted(){
+        String playlistName = faker.funnyName().name();
+        System.out.println(playlistName);
+
+        MyLoginPage loginPage=new MyLoginPage(driver);
+        loginPage.open(url);
+        MainPage mainPage = loginPage.LoginToApplication(username,password);
+        String playlistId = mainPage.createPlaylist(playlistName);
+        mainPage.deletePlaylist(playlistId);
+        Assert.assertTrue(mainPage.playlistDeleted(playlistId, playlistName));
+        logger.info("Assert passed");
+    }
 }
