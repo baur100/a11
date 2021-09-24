@@ -3,7 +3,7 @@ package xxLesson15;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Dublicate {
+public class Duplicate {
     public static void main(String[] args) {
         int[] numbers = {1,4,5,89,8,9,9,0,12,2,11,12,67,89,1,89};
         Set<Integer> set = new HashSet<>();
