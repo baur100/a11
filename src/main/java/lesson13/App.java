@@ -22,10 +22,10 @@ public class App {
 //        Short x1 = 3;
 
 
-        Person manager = new Person("Boris");
-        Person janitor = manager;
+//        Person manager = new Person("Boris");
+//        Person janitor = manager;
 
-        janitor.setName("Alan");
+//        janitor.setName("Alan");
 
         int a = 5;
         int z = a;

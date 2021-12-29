@@ -160,8 +160,8 @@ public class PlaylistTest extends BaseTest {
         loginPage.open(url);
         MainPage mainPage = loginPage.LoginToApplication(username,password);
         String playlistId = mainPage.createPlaylist(playlistName);
-        mainPage.deletePlaylist(playlistId);
-        Assert.assertTrue(mainPage.playlistDeleted(playlistId, playlistName));
+        mainPage.deletePlaylist(playlistId,playlistName);
+        Assert.assertTrue(mainPage.playlistDeleted(playlistId));
         logger.info("Assert passed");
     }
 }

@@ -28,7 +28,7 @@ public class LoginTest {
     public void LoginTest_LoginToAppUsingCorrectCradentials(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
-        AccountPage accountPage = loginPage.LoginToApplication("......","......");
+        AccountPage accountPage = loginPage.LoginToApplication("****","*****");
         Assert.assertTrue(accountPage.isAccountNumber());
     }
 

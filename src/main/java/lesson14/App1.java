@@ -53,6 +53,8 @@ public class App1 {
         Map<Fruit,Person> favorite = new HashMap<>();
         favorite.put(new Fruit(),new Person());
 
+//        System.out.println(favorite);
+
 
     }
 }

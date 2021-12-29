@@ -6,6 +6,7 @@ public class Work1 {
     public static void main(String[] args) {
 
         int[]  numbers ={2, 3, 5, 6, 7, 8};
+
         System.out.println(sum_arr(numbers));
 
         int[] arr = {3, 9, 1, 8, 4, 8, 5};
@@ -51,6 +52,7 @@ public class Work1 {
 //        int first = minimum(array);
 //         sortedArray[0]=first;
 //         while (notSorted){
+
 //             for (int a:array){
 //                 if(a==first){
 //                     sortedArray[x]=a;
@@ -67,4 +69,5 @@ public class Work1 {
 //             System.out.println(a);
 //         }
 //    }
+
 }

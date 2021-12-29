@@ -7,6 +7,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -22,7 +23,7 @@ public class MainPage extends BasePage{
         return driver.findElement(homeBy);
     }
     private WebElement getPlaylistById(String playlistId){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@href='#!/playlist/"+playlistId+"']")));
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@href='#!/playlist/"+playlistId+"']")));
         return driver.findElement(By.xpath("//*[@href='#!/playlist/"+playlistId+"']"));
     }
     private WebElement getPlaylistEditField(){
@@ -99,14 +100,25 @@ public class MainPage extends BasePage{
 
     private WebElement selectedSong(){
         List<WebElement> songList = driver.findElements(By.xpath("//table/tr/td[@class='title']"));
-            Random rand = new Random();
-            int randomNumber = rand.nextInt(songList.size());
-            WebElement randomSong =songList.get(randomNumber);
-        System.out.println(randomSong.getText());
+                Random rand = new Random();
+                int randomNumber = rand.nextInt(songList.size());
+                WebElement randomSong = songList.get(randomNumber);
+                    System.out.println(randomSong.getText());
       return randomSong;
     }
+    private List<WebElement> selectSongs(){
+        List<WebElement> songList = driver.findElements(By.xpath("//table/tr/td[@class='title']"));
+        int numbersOfSongs = 4;
+        Random rand = new Random();
+        List<WebElement> selectedSongs = new ArrayList<>();
+        for(int i=0; i<numbersOfSongs; i++){
+            int randomIndex = rand.nextInt(songList.size());
+            selectedSongs.add(songList.get(randomIndex));
+        }
+        return selectedSongs;
+    }
 
-    private WebElement addTo(){
+    private WebElement getAddTo(){
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='has-sub']")));
         return driver.findElement(By.xpath("//*[@class='has-sub']"));
     }
@@ -131,10 +143,10 @@ public class MainPage extends BasePage{
         System.out.println(randomSong.getText());
         Actions actions = new Actions(driver);
         actions.contextClick(randomSong).build().perform();
-        addTo().click();
+        getAddTo().click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='playlist' and text()='" + playlistName + "']")));
         WebElement playlist = driver.findElement(By.xpath("//*[@class='playlist' and text()='" + playlistName + "']"));
-        actions.click(playlist).build().perform();
+        playlist.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='success show']")));
         WebElement createdPlaylist = getPlaylistById(playlistId);
         JavascriptExecutor je = (JavascriptExecutor) driver;
@@ -147,21 +159,21 @@ public class MainPage extends BasePage{
         return driver.findElement(By.xpath("//*[@title='Delete this playlist']"));
     }
 
-    public void deletePlaylist(String playlistId) {
+    public void deletePlaylist(String playlistId,String playlistName) {
         Actions actions = new Actions(driver);
         WebElement createdPlaylist = getPlaylistById(playlistId);
         JavascriptExecutor je = (JavascriptExecutor) driver;
         je.executeScript("arguments[0].scrollIntoView();",createdPlaylist);
         actions.click(createdPlaylist).perform();
         getDeletePlaylistButton().click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='success show']")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='success show' and contains(text(),'"+playlistName+"') and contains(text(),'Deleted playlist')]")));
     }
 
-    public boolean playlistDeleted(String playlistId, String playlistName) {
+    public boolean playlistDeleted(String playlistId) {
         try{
             return getPlaylistById(playlistId).isEnabled();
         } catch (NoSuchElementException ignored){
-            return false;
+            return true;
         }
     }
 }

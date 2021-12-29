@@ -3,7 +3,7 @@ package xxLesson15;
 public class Remainder {
     public static void main(String[] args) {
 
-        int a = 5;
+        int a = 22;
         int b = 6;
         int r1 = remainder1(a, b);
         System.out.println(r1);

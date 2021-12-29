@@ -23,7 +23,7 @@ public class DbTest {
 
     @Test
     public void getPlaylistSongs(){
-        List<PlaylistSongs> songs = DbAdapter.getPlaylistSongs(972);
+        List<PlaylistSongs> songs = DbAdapter.getPlaylistSongs(14031);
         for(PlaylistSongs song:songs){
             System.out.println(song.getTrack()+" - "+song.getTitle()+" - "+song.getArtist()+" - "+song.getAlbum());
         }

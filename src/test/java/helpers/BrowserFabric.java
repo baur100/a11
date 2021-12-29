@@ -48,9 +48,9 @@ public class BrowserFabric {
 
     private static WebDriver getFirefoxDriver() {
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--height=1000");
+        options.addArguments("--height=800");
         options.addArguments("--width=1400");
-        options.addArguments("--headless");
+//        options.addArguments("--headless");
         WebDriverManager.firefoxdriver().setup();
         return new FirefoxDriver(options);
     }
