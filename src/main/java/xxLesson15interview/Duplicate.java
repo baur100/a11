@@ -1,4 +1,4 @@
-package xxLesson15;
+package xxLesson15interview;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,6 +11,7 @@ public class Duplicate {
         for(int n: numbers){
             set.add(n);
         }
+        System.out.println(set);
 
         for (int n :set){
             int count = 0;

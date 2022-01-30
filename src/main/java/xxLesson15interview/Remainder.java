@@ -1,4 +1,4 @@
-package xxLesson15;
+package xxLesson15interview;
 
 public class Remainder {
     public static void main(String[] args) {
